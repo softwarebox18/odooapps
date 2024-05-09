@@ -1,0 +1,2 @@
+id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
+group_barcode_access,group_barcode_access all,mh_product_barcode_generator.model_add_update_barcode_wizard,group_barcode_access,1,1,1,1

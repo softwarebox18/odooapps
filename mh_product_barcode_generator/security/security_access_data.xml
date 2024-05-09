@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<odoo>
+    <record id="group_category_barcode_management" model="ir.module.category">
+        <field name="name">Barcode Management</field>
+        <field name="description">Category For Hospital</field>
+    </record>
+
+
+    <record id="group_barcode_access" model="res.groups">
+        <field name="name">Generate Barcode</field>
+        <field name="category_id" ref="group_category_barcode_management"/>
+    </record>
+</odoo>
