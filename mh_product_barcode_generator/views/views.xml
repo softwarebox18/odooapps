@@ -39,7 +39,19 @@
                                 <div class="o_setting_right_pane">
                                     <label for="barcode_size_unit"/>
                                     <div class="text-muted">
-                                        Standard sizes for various barcode types in millimeters (mm), inches (in), centimeters (cm), and picas (pc)
+                                        Barcode dimensions in millimeters (mm), inches (in), centimeters (cm), and picas (pc)
+                                    </div>
+                                    <div class="text-muted">
+                                        - For millimeters (mm): Width= 70.00, Height= 15.00, Bar Width=0.50, Bar Height=10.0
+                                    </div>
+                                    <div class="text-muted">
+                                        - For inches (in): Width= 4.00, Height= 0.80, Bar Width=0.02, Bar Height=0.50
+                                    </div>
+                                    <div class="text-muted">
+                                        - For centimeters (cm): Width= 6.00, Height= 1.40, Bar Width=0.03, Bar Height=1.00
+                                    </div>
+                                    <div class="text-muted">
+                                        - For picas (pc): Width= 20.00, Height= 4.00, Bar Width=0.10, Bar Height=2.00
                                     </div>
                                     <div class="content-group">
                                         <div class="mt16">

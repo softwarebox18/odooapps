@@ -2,14 +2,14 @@
 # Part of Odoo. See LICENSE file for full copyright and licensing details.
 {
     'name': 'Product Barcode Generator',
-    'summary': """The Multi Products Barcode Generator module for Odoo empowers users to effortlessly generate and customize barcodes for products. Whether you’re managing inventory, tracking assets, or simplifying point-of-sale processes, this module provides the tools to streamline barcode generation within your Odoo environment.""",
+    'summary': """Multi Products Dynamic Barcode Generator""",
     'sequence': -100,
     'version': '15.0.1.0.0',
     'category': 'Sale',
     'author': 'Mudassir Hassan',
     'website': 'http://mudassirh45@gmail.com',
     'module_type': 'industries',
-    'price': '31.0',
+    'price': '29.0',
     'currency': 'USD',
     'depends': ['base','purchase','product'],
     'data': [
