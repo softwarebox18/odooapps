@@ -1,0 +1,34 @@
+<?xml version="1.0"?>
+<odoo>
+
+    <!-- modify powered by odoo from login page -->
+    <template id="custom_login_layout" inherit_id="web.login_layout">
+        <xpath expr="//div[@class='text-center small mt-4 pt-3 border-top']/a[last()]" position="replace">
+            <a href="https://www.genzure.com" target="_blank">Powered by <span>GENZURA</span></a>
+        </xpath>
+    </template>
+
+    <!-- remove powered by odoo and create website from website page -->
+    <template id="web.brand_promotion_message" name="Brand Promotion Message">
+<!--        <t t-set="odoo_logo">-->
+<!--            <a target="_blank"-->
+<!--                t-attf-href="http://www.odoo.com?utm_source=db&amp;utm_medium=#{_utm_medium}"-->
+<!--                class="badge text-bg-light">-->
+<!--                <img alt="Odoo"-->
+<!--                    src="/web/static/img/odoo_logo_tiny.png"-->
+<!--                    width="62" height="20"-->
+<!--                    style="width: auto; height: 1em; vertical-align: baseline;"/>-->
+<!--            </a>-->
+<!--        </t>-->
+<!--        <t t-set="final_message">Powered by %s%s</t>-->
+<!--        <t t-out="final_message % (odoo_logo, _message and ('- ' + _message) or '')"/>-->
+    </template>
+
+    <!-- set copyright company name from website page -->
+    <template id="footer_copyright_company_name_custom" inherit_id="website.layout">
+        <xpath expr="//footer//span[hasclass('o_footer_copyright_name')]" position="replace">
+            <span class="o_footer_copyright_name me-2">Copyright &amp;copy; Add Your Company Name</span>
+        </xpath>
+    </template>
+
+</odoo>
