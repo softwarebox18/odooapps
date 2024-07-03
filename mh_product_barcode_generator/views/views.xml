@@ -35,29 +35,75 @@
                                 </div>
                             </div>
 
+<!--                            <div id="barcode_size_unit" class="col-12 o_setting_box">-->
+<!--                                <div class="o_setting_right_pane">-->
+<!--                                    <label for="barcode_size_unit"/>-->
+<!--                                    <div class="text-muted">-->
+<!--                                        Barcode dimensions in millimeters (mm), inches (in), centimeters (cm), and picas (pc)-->
+<!--                                    </div>-->
+<!--                                    <div class="text-muted">-->
+<!--                                        - For millimeters (mm): Width= 70.00, Height= 15.00, Bar Width=0.50, Bar Height=10.0-->
+<!--                                    </div>-->
+<!--                                    <div class="text-muted">-->
+<!--                                        - For inches (in): Width= 4.00, Height= 0.80, Bar Width=0.02, Bar Height=0.50-->
+<!--                                    </div>-->
+<!--                                    <div class="text-muted">-->
+<!--                                        - For centimeters (cm): Width= 6.00, Height= 1.40, Bar Width=0.03, Bar Height=1.00-->
+<!--                                    </div>-->
+<!--                                    <div class="text-muted">-->
+<!--                                        - For picas (pc): Width= 20.00, Height= 4.00, Bar Width=0.10, Bar Height=2.00-->
+<!--                                    </div>-->
+<!--                                    <div class="content-group">-->
+<!--                                        <div class="mt16">-->
+<!--                                            <field name="barcode_size_unit" class="o_light_label" widget="radio"/>-->
+<!--                                        </div>-->
+<!--                                    </div>-->
+<!--                                </div>-->
+<!--                            </div>-->
+
                             <div id="barcode_size_unit" class="col-12 o_setting_box">
                                 <div class="o_setting_right_pane">
                                     <label for="barcode_size_unit"/>
                                     <div class="text-muted">
-                                        Barcode dimensions in millimeters (mm), inches (in), centimeters (cm), and picas (pc)
+                                        Standard sizes for various barcode types in millimeters (mm), inches (in), centimeters (cm), and picas (pc)
+                                        <br/>
+                                        <strong>Summary of Unit Conversions</strong>
+                                    </div>
+                                    <br/>
+                                    <div class="text-muted">
+                                        <p><b>inch:</b> 1 inch = 72 points</p>
+                                        <p><b>mm (millimeter):</b> 1 mm= <sup>72</sup>/<sub>25.4</sub> points ≈ 2.835 points</p>
+                                        <p><b>cm (centimeter):</b> 1 cm = 10 mm = <sup>720</sup>/<sub>25.4</sub>  points ≈ 28.35 points</p>
+                                        <p><b>pica:</b> 1 pica = 12 points</p>
                                     </div>
                                     <div class="text-muted">
+                                        # Example usage of 'inch' to set a barcode size of 3.50 x 0.50 inches<br/>
+                                        width = 3.50 * inch  # 3.50 inches wide<br/>
+                                        height = 0.50 * inch  # 0.50 inches height<br/>
+                                        bar_width = 0.02 * inch  # 0.02 inches bar line thickness<br/>
+                                        bar_height = 0.40 * inch  # 0.40 inches bar line height
+                                        <br/>
+                                        <br/>
+                                        <strong>You can use below dimensions</strong>
+                                        <div class="text-muted">
                                         - For millimeters (mm): Width= 70.00, Height= 15.00, Bar Width=0.50, Bar Height=10.0
-                                    </div>
-                                    <div class="text-muted">
-                                        - For inches (in): Width= 4.00, Height= 0.80, Bar Width=0.02, Bar Height=0.50
-                                    </div>
-                                    <div class="text-muted">
-                                        - For centimeters (cm): Width= 6.00, Height= 1.40, Bar Width=0.03, Bar Height=1.00
-                                    </div>
-                                    <div class="text-muted">
-                                        - For picas (pc): Width= 20.00, Height= 4.00, Bar Width=0.10, Bar Height=2.00
+                                        </div>
+                                        <div class="text-muted">
+                                            - For inches (in): Width= 4.00, Height= 0.80, Bar Width=0.02, Bar Height=0.50
+                                        </div>
+                                        <div class="text-muted">
+                                            - For centimeters (cm): Width= 6.00, Height= 1.40, Bar Width=0.03, Bar Height=1.00
+                                        </div>
+                                        <div class="text-muted">
+                                            - For picas (pc): Width= 20.00, Height= 4.00, Bar Width=0.10, Bar Height=2.00
+                                        </div>
                                     </div>
                                     <div class="content-group">
                                         <div class="mt16">
                                             <field name="barcode_size_unit" class="o_light_label" widget="radio"/>
                                         </div>
                                     </div>
+
                                 </div>
                             </div>
 

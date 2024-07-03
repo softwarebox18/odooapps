@@ -39,61 +39,6 @@ class ProductTemplate(models.Model):
         }
         # return {'type': 'ir.actions.act_window_close'}
 
-    # def generate_codabar_value(self):
-    #     allowed_chars = r'^[0-9\-$:/.+ABCD]+$'
-    #     return ''.join(random.choices(re.findall(allowed_chars, ''), k=10))
-    #
-    # def generate_code11_value(self):
-    #     allowed_chars = r'^[0-9\-]+$'
-    #     return ''.join(random.choices(re.findall(allowed_chars, ''), k=10))
-    #
-    # def generate_code128_value(self):
-    #     allowed_chars = r'^[0-9A-Za-z]+$'
-    #     return ''.join(random.choices(re.findall(allowed_chars, ''), k=10))
-    #
-    # def generate_ean5_value(self):
-    #     return ''.join(random.choices('0123456789', k=5))
-    #
-    # def generate_ean8_value(self):
-    #     return ''.join(random.choices('0123456789', k=8))
-    #
-    # def generate_ean13_value(self):
-    #     return ''.join(random.choices('0123456789', k=13))
-    #
-    # def generate_extended_39_value(self):
-    #     allowed_chars = r'^[0-9A-Z\-.$/+% ]+$'
-    #     return ''.join(random.choices(re.findall(allowed_chars, ''), k=10))
-    #
-    # def generate_extended_93_value(self):
-    #     allowed_chars = r'^[0-9A-Za-z!\"#$%&\'()*+,-./:;<=>?@[\\]^_`{|}~\x00]+$'
-    #     return ''.join(random.choices(re.findall(allowed_chars, ''), k=10))
-    #
-    # def generate_fim_value(self):
-    #     return 'FIM'
-    #
-    # def generate_isbn_value(self):
-    #     return ''.join(random.choices('0123456789', k=10))
-    #
-    # def generate_i2of5_value(self):
-    #     return ''.join(random.choices('02468', k=10))
-    #
-    # def generate_msi_value(self):
-    #     return ''.join(random.choices('0123456789', k=10))
-    #
-    # def generate_postnet_value(self):
-    #     return ''.join(random.choices('0123456789', k=10))
-    #
-
-    #
-    # def generate_upca_value(self):
-    #     return ''.join(random.choices('0123456789', k=12))
-    #
-    # def generate_usps_4state_value(self):
-    #     return ''.join(random.choices('0123456789', k=10))
-
-
-
-
     def get_bar_code_value(self,barcode_type):
         try:
             if barcode_type == 'Codabar':
