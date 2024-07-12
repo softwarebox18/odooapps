@@ -1,0 +1,2 @@
+id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
+disable_quick_create_edit_config_access_admin,access quick_create_edit_config,model_disable_quick_create_edit_config,base.group_erp_manager,1,1,1,1

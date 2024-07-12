@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <record id="view_disable_quick_create_edit_config_tree" model="ir.ui.view">
+        <field name="name">disable.quick.create.edit.config.tree</field>
+        <field name="model">disable.quick.create.edit.config</field>
+        <field name="arch" type="xml">
+            <tree string="Disable Quick Create">
+                <field name="model_id"/>
+                <field name="fields_ids" widget="many2many_tags"/>
+            </tree>
+        </field>
+    </record>
+
+    <record id="view_disable_quick_create_edit_config_form" model="ir.ui.view">
+        <field name="name">disable.quick.create.edit.config.form</field>
+        <field name="model">disable.quick.create.edit.config</field>
+        <field name="arch" type="xml">
+            <form string="Disable Quick Create">
+                <group>
+                    <field name="model_id" required="1" placeholder="Select model in which you want to disable quick create and edit option."/>
+                    <field name="fields_ids" required="1" widget="many2many_tags" placeholder="Quick create and edit option will be disable on selected fields"/>
+                </group>
+            </form>
+        </field>
+    </record>
+
+    <record id="action_disable_quick_create_edit_config" model="ir.actions.act_window">
+        <field name="name">Disable Quick Create</field>
+        <field name="res_model">disable.quick.create.edit.config</field>
+        <field name="view_mode">tree,form</field>
+        <field name="view_id" ref="view_disable_quick_create_edit_config_tree"/>
+    </record>
+
+    <menuitem id="menu_disable_quick_create_edit_config" name="Disable Quick Create" groups="base.group_erp_manager"
+              action="action_disable_quick_create_edit_config"/>
+
+</odoo>
