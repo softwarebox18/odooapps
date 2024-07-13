@@ -10,7 +10,7 @@
     'author': 'Mudassir Hassan',
     'website': 'http://mudassirh45@gmail.com',
     'module_type': 'industries',
-    'price': '32.50',
+    'price': '12.00',
     'currency': 'USD',
     'depends': ['base','purchase','product'],
     'data': [
