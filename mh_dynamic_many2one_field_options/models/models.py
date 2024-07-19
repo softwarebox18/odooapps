@@ -8,8 +8,14 @@ class many2one_field_config(models.Model):
     _rec_name = 'model_id'
 
     model_id = fields.Many2one('ir.model', string='Model')
-    config_line_ids = fields.One2many('many2one.field.config.lines','config_id', string='Add Fields',ondelete='cascade')
-    # fields_ids = fields.Many2many('ir.model.fields', string='Fields', domain="[('model_id', '=', model_id),('ttype', '=', 'many2one')]")
+    config_line_ids = fields.One2many('many2one.field.config.lines','config_id', string='Add Fields')
+
+    # Apply the unique constraint in the model definition
+    _sql_constraints = [
+        ('model_id_unique',
+         'UNIQUE (model_id)',
+         'A configuration with this model already exists. Please use a different model.')
+    ]
 
 class add_search_limit_config_lines(models.Model):
 
@@ -21,4 +27,4 @@ class add_search_limit_config_lines(models.Model):
     quick_search_more_limit = fields.Integer(string="Quick Search More Limit", default=320)
     is_hide_search_more = fields.Boolean(string="Hide Search More", default=False)
     can_open = fields.Boolean(string="Can Open", default=True)
-    config_id = fields.Many2one('many2one.field.config', string='Config', required=True)
+    config_id = fields.Many2one('many2one.field.config', string='Config', required=True, ondelete='cascade')
