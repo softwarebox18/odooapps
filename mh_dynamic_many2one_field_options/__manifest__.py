@@ -1,14 +1,14 @@
 # Part of Odoo. See LICENSE file for full copyright and licensing details.
 {
-    'name': 'Disable or Hide Quick Create and Edit Many2One Dynamically',
-    'summary': """Disable or Hide Quick Create and Edit Many2One Dynamically""",
+    'name': 'Dynamic Many2One Field Options',
+    'summary': """Dynamic Many2One Field Options""",
     'sequence': -1,
     'version': '17.0.1.0.0',
     'category': 'Website',
     'author': 'Mudassir Hassan',
     'website': 'http://mudassirh45@gmail.com',
     'module_type': 'industries',
-    'price': '16.49',
+    'price': '49.69',
     'currency': 'USD',
     'depends': ['base', 'web'],
     'data': [
@@ -20,7 +20,7 @@
     'application': True,
     'assets': {
         'web.assets_backend': [
-            'mh_disable_quick_create_edit_many2one/static/src/js/disable_quick_create_edit.js',
+            'mh_dynamic_many2one_field_options/static/src/js/dynamic_many2one_field_options.js',
         ],
     },
     'license': 'OPL-1',
