@@ -18,16 +18,20 @@
                 <group>
                     <field name="model_id" required="1" help="Select model in which you want to add Many2One Field Options Dynamically." placeholder="Select model in which you want to add Many2One Field Options Dynamically."/>
                 </group>
-                <field name="config_line_ids">
-                    <tree editable="bottom">
-                        <field name='fields_id' help="Choose fields to add dynamic options" placeholder="Choose fields to add dynamic options" domain="[('model_id', '=', parent.model_id),('ttype', '=', 'many2one')]"/>
-                        <field name='is_hide_create_edit' help="Check to hide quick create and edit option."/>
-                        <field name='search_limit' help="Limit the number of records in many2one dropdown."/>
-                        <field name='quick_search_more_limit' help="Limit the number of records when click on search more... option."/>
-                        <field name='is_hide_search_more' help="Check to hide search more... option."/>
-                        <field name='can_open' help="Check to hide quick edit option."/>
-                    </tree>
-                </field>
+                <notebook colspan="4">
+                    <page string="Field Information">
+                        <field name="config_line_ids">
+                            <tree editable="bottom">
+                                <field name='fields_id' help="Choose fields to add dynamic options" placeholder="Choose fields to add dynamic options" domain="[('model_id', '=', parent.model_id),('ttype', '=', 'many2one')]"/>
+                                <field name='is_hide_create_edit' help="Check to hide quick create and edit option."/>
+                                <field name='search_limit' help="Limit the number of records in many2one dropdown."/>
+                                <field name='quick_search_more_limit' help="Limit the number of records when click on search more... option."/>
+                                <field name='is_hide_search_more' help="Check to hide search more... option."/>
+                                <field name='can_open' help="Check to hide quick edit option."/>
+                            </tree>
+                        </field>
+                    </page>
+                </notebook>
             </form>
         </field>
     </record>
