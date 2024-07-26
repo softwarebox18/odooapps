@@ -1,14 +1,14 @@
 # Part of Odoo. See LICENSE file for full copyright and licensing details.
 {
-    'name': 'Dynamic Many2One Field Options',
-    'summary': """Dynamic Many2One Field Options""",
+    'name': 'Dynamic Multi-Field Name Search for Many2One Fields',
+    'summary': """Dynamic Multi-Field Name Search for Many2One Fields""",
     'sequence': -1,
     'version': '17.0.1.0.0',
     'category': 'Website',
     'author': 'Mudassir Hassan',
     'website': 'http://mudassirh45@gmail.com',
     'module_type': 'industries',
-    'price': '27.69',
+    'price': '19.36',
     'currency': 'USD',
     'depends': ['base', 'web'],
     'data': [
@@ -20,7 +20,7 @@
     'application': True,
     'assets': {
         'web.assets_backend': [
-            'mh_dynamic_many2one_field_options/static/src/js/dynamic_many2one_field_options.js',
+            'mh_dynamic_name_search/static/src/js/dynamic_name_search.js',
         ],
     },
     'license': 'OPL-1',
