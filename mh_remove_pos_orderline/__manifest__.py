@@ -5,8 +5,8 @@
     'sequence': 901,
     'version': '17.0.1.0.0',
     'category': 'Point of Sale',
-    'author': 'Mudassir Hassan',
-    'website': 'http://mudassirh45@gmail.com',
+    'author': 'Software Box',
+    'website': 'http://softwarebox18@gmail.com',
     'module_type': 'industries',
     'depends': ['point_of_sale'],
     'data': [
