@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <record id="view_many2one_name_search_and_get_config_tree" model="ir.ui.view">
+        <field name="name">many2one.name.search.and.get.config.tree</field>
+        <field name="model">many2one.name.search.and.get.config</field>
+        <field name="arch" type="xml">
+            <tree string="Name Search and Get Config">
+                <field name="model_id"/>
+            </tree>
+        </field>
+    </record>
+
+    <record id="view_many2one_name_search_and_get_config_form" model="ir.ui.view">
+        <field name="name">many2one.name.search.and.get.config.form</field>
+        <field name="model">many2one.name.search.and.get.config</field>
+        <field name="arch" type="xml">
+            <form string="Name Search and Get Config">
+                <group>
+                    <field name="model_id" options="{'no_create': True, 'no_open': True}" required="1" help="Select model in which you want to add name search options dynamically." placeholder="Select model in which you want to add name search options dynamically."/>
+                    <field name="is_active"/>
+                    <field name="fields_ids" options="{'no_create': True, 'no_open': True}" widget="many2many_tags"/>
+                </group>
+                <notebook colspan="4">
+                    <page string="Copy below code in your models.py file">
+                        <field name="code_html" force_save="1" widget="html" readonly="1"/>
+                    </page>
+                </notebook>
+            </form>
+        </field>
+    </record>
+
+    <record id="action_many2one_name_search_and_get_config" model="ir.actions.act_window">
+        <field name="name">Name Search and Get Config</field>
+        <field name="res_model">many2one.name.search.and.get.config</field>
+        <field name="view_mode">tree,form</field>
+        <field name="view_id" ref="view_many2one_name_search_and_get_config_tree"/>
+    </record>
+
+    <menuitem id="menu_many2one_name_search_and_get_config" name="Name Search and Get Config" groups="base.group_erp_manager"
+              action="action_many2one_name_search_and_get_config"/>
+
+</odoo>
