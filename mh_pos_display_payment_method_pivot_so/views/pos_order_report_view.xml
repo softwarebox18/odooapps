@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <record id="view_report_pos_order_search_inherit_custom" model="ir.ui.view">
+        <field name="name">report.pos.order.search.inherit.custom</field>
+        <field name="model">report.pos.order</field>
+        <field name="inherit_id" ref="point_of_sale.view_report_pos_order_search"/>
+        <field name="arch" type="xml">
+            <xpath expr="//filter[@name='User']" position='after'>
+                <filter string="Payment Method" name="payment_method_id" domain="[]" context="{'group_by':'payment_method_id'}"/>
+            </xpath>
+        </field>
+    </record>
+
+   <!-- Inherit the pivot view to add the payment method field -->
+    <record id="view_pos_order_report_pivot_inherit_custom" model="ir.ui.view">
+        <field name="name">report.pos.order.pivot.inherit.custom</field>
+        <field name="model">report.pos.order</field>
+        <field name="inherit_id" ref="point_of_sale.view_report_pos_order_pivot"/>
+        <field name="arch" type="xml">
+            <xpath expr="//field[@name='price_total']" position="after">
+                <field name="payment_method_id"/>
+            </xpath>
+        </field>
+    </record>
+</odoo>
+
