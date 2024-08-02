@@ -21,6 +21,7 @@
         # 'views/pos_order_view.xml',
         'views/pos_order_report_view.xml',
     ],
+    'images': ['static/description/main.PNG'],
     'installable': True,
     'auto_install': True,
     'license': 'LGPL-3',
