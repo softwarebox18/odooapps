@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <record id="view_order_product_search_cp" model="ir.ui.view">
+        <field name="name">view.order.product.search.cp</field>
+        <field name="model">sale.report</field>
+        <field name="inherit_id" ref="sale.view_order_product_search"/>
+        <field name="arch" type="xml">
+            <xpath expr="//field[@name='product_id']" position='after'>
+                <field name="standard_price"/>
+            </xpath>
+<!--            <xpath expr="//filter[@name='product_id']" position='after'>-->
+<!--                <filter string="Cost Price" name="standard_price" domain="[]" context="{'group_by':'standard_price'}"/>-->
+<!--            </xpath>-->
+        </field>
+    </record>
+
+   <!-- Inherit the pivot view to add the payment method field -->
+
+    <record id="view_sale_report_pivot_cp" model="ir.ui.view">
+        <field name="name">sale.report.pivot.cp</field>
+        <field name="model">sale.report</field>
+        <field name="inherit_id" ref="sale.view_order_product_pivot"/>
+        <field name="arch" type="xml">
+            <xpath expr="//field[@name='team_id']" position="after">
+                <field name="standard_price"/>
+            </xpath>
+        </field>
+    </record>
+</odoo>
+
