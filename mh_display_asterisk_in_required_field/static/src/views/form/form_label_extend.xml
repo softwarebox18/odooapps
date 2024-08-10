@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<templates id="template" xml:space="preserve">
+    <!-- Extend the original FormLabel template -->
+    <t t-name="mh_display_asterisk_in_required_field.FormLabel" t-inherit="web.FormLabel" t-inherit-mode="extension">
+        <xpath expr="./label" position="replace">
+            <label class="o_form_label" t-att-for="props.id" t-att-class="className">
+                <t t-esc="props.string"/>
+                <t t-if="props.fieldInfo.required">
+                    <span class="required-asterisk"> *</span>
+                </t>
+                <sup class="text-info p-1" t-if="hasTooltip" t-att="{'data-tooltip-template': 'web.FieldTooltip', 'data-tooltip-info': tooltipInfo, 'data-tooltip-touch-tap-to-show': 'true'}">?</sup>
+            </label>
+        </xpath>
+    </t>
+</templates>
