@@ -19,6 +19,7 @@
         <field name="arch" type="xml">
             <xpath expr="//field[@name='price_total']" position="after">
                 <field name="payment_method_id"/>
+                <field name="payment_amount" sum="True"/>
             </xpath>
         </field>
     </record>

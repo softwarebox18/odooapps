@@ -4,9 +4,13 @@ class PosOrderReport(models.Model):
     _inherit = "report.pos.order"
 
     payment_method_id = fields.Many2one('pos.payment.method', string='Payment Method', readonly=True)
+    payment_amount = fields.Float(string='Payment Amount', readonly=True)
 
     def _select(self):
-        return super(PosOrderReport, self)._select() + ", pm.id AS payment_method_id"
+        return super(PosOrderReport, self)._select() + """
+            , pm.id AS payment_method_id
+            , SUM(pp.amount) AS payment_amount
+        """
 
     def _from(self):
         return super(PosOrderReport, self)._from() + """
