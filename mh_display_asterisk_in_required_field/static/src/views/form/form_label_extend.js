@@ -10,7 +10,7 @@ patch(FormLabel.prototype, "mh_display_asterisk", {
         this._super.apply(this, arguments);
 
         // Append the asterisk with a span if the field is required
-        if (this.props.fieldInfo.modifiers.required) {
+        if (this.props.fieldInfo && this.props.fieldInfo.modifiers && this.props.fieldInfo.modifiers.required) {
             onMounted(() => {
                 const label = document.querySelector(`[for="${this.props.id}"]`);
                 if (label) {
