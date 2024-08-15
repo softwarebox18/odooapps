@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <record id="view_many2one_name_search_config_tree" model="ir.ui.view">
+        <field name="name">hide.duplicate.button.config.tree</field>
+        <field name="model">hide.duplicate.button.config</field>
+        <field name="arch" type="xml">
+            <tree string="Hide Duplicate Action Menu Button">
+                <field name="model_id"/>
+                <field name="is_active"/>
+            </tree>
+        </field>
+    </record>
+
+    <record id="view_hide_duplicate_button_config_form" model="ir.ui.view">
+        <field name="name">hide.duplicate.button.config.form</field>
+        <field name="model">hide.duplicate.button.config</field>
+        <field name="arch" type="xml">
+            <form string="Hide Duplicate Action Menu Button">
+                <group>
+                    <field name="model_id" options="{'no_create': True, 'no_open': True}" required="1" help="Select model in which you want to hide duplicate action menu dynamically." placeholder="Select model in which you want to hide duplicate action menu dynamically."/>
+                    <field name="is_active"/>
+                </group>
+            </form>
+        </field>
+    </record>
+
+    <record id="action_hide_duplicate_button_config" model="ir.actions.act_window">
+        <field name="name">Hide Duplicate Action Menu Button</field>
+        <field name="res_model">hide.duplicate.button.config</field>
+        <field name="view_mode">tree,form</field>
+        <field name="view_id" ref="view_many2one_name_search_config_tree"/>
+    </record>
+
+    <menuitem id="menu_hide_duplicate_button_config" name="Hide Duplicate Menu" groups="base.group_erp_manager"
+              action="action_hide_duplicate_button_config"/>
+
+    <record id="view_order_form_inherit_js_class" model="ir.ui.view">
+        <field name="name">sale.order.form.js.class</field>
+        <field name="model">sale.order</field>
+        <field name="inherit_id" ref="sale.view_order_form"/>
+        <field name="arch" type="xml">
+            <xpath expr="//form" position="attributes">
+                <attribute name="js_class">hide_duplicate_menu_form_view</attribute>
+            </xpath>
+        </field>
+    </record>
+</odoo>
+

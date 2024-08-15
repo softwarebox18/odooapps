@@ -1,0 +1,8 @@
+<?xml version="1.0"?>
+<odoo>
+    <data>
+        <record id="group_hide_duplicate_menu" model="res.groups">
+            <field name="name">Hide Duplicate Menu</field>
+        </record>
+    </data>
+</odoo>
