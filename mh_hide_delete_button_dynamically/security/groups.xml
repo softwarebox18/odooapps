@@ -1,0 +1,8 @@
+<?xml version="1.0"?>
+<odoo>
+    <data>
+        <record id="group_hide_delete_menu" model="res.groups">
+            <field name="name">Hide Delete Menu</field>
+        </record>
+    </data>
+</odoo>

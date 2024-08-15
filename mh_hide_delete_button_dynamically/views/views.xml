@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <record id="view_hide_delete_button_config_tree" model="ir.ui.view">
+        <field name="name">hide.delete.button.config.tree</field>
+        <field name="model">hide.delete.button.config</field>
+        <field name="arch" type="xml">
+            <tree string="Hide Delete Action Menu Button">
+                <field name="model_id"/>
+                <field name="is_active"/>
+            </tree>
+        </field>
+    </record>
+
+    <record id="view_hide_delete_button_config_form" model="ir.ui.view">
+        <field name="name">hide.delete.button.config.form</field>
+        <field name="model">hide.delete.button.config</field>
+        <field name="arch" type="xml">
+            <form string="Hide Delete Action Menu Button">
+                <group>
+                    <field name="model_id" options="{'no_create': True, 'no_open': True}" required="1" help="Select model in which you want to hide delete action menu button." placeholder="Select model in which you want to hide delete action menu button."/>
+                    <field name="is_active"/>
+                </group>
+            </form>
+        </field>
+    </record>
+
+    <record id="action_hide_delete_button_config" model="ir.actions.act_window">
+        <field name="name">Hide Delete Action Menu Button</field>
+        <field name="res_model">hide.delete.button.config</field>
+        <field name="view_mode">tree,form</field>
+        <field name="view_id" ref="view_hide_delete_button_config_tree"/>
+    </record>
+
+    <menuitem id="menu_hide_delete_button_config" name="Hide Delete Menu" groups="base.group_erp_manager"
+              action="action_hide_delete_button_config"/>
+
+
+</odoo>
+
