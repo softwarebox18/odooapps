@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <record id="view_hide_action_menu_button_config_tree" model="ir.ui.view">
+        <field name="name">hide.action.menu.button.config.tree</field>
+        <field name="model">hide.action.menu.button.config</field>
+        <field name="arch" type="xml">
+            <tree string="Hide Action Menus Button">
+                <field name="model_id"/>
+                <field name="is_active"/>
+            </tree>
+        </field>
+    </record>
+
+    <record id="view_hide_action_menu_button_config_form" model="ir.ui.view">
+        <field name="name">hide.action.menu.button.config.form</field>
+        <field name="model">hide.action.menu.button.config</field>
+        <field name="arch" type="xml">
+            <form string="Hide Action Menus Button">
+                <group>
+                    <field name="model_id" options="{'no_create': True, 'no_open': True}" required="1" help="Select model in which you want to hide delete, duplicate and export action menu dynamically." placeholder="Select model in which you want to hide delete, duplicate and export action menu dynamically."/>
+                    <field name="is_active"/>
+                </group>
+            </form>
+        </field>
+    </record>
+
+    <record id="action_hide_action_menu_button_config" model="ir.actions.act_window">
+        <field name="name">Hide Action Menus Button</field>
+        <field name="res_model">hide.action.menu.button.config</field>
+        <field name="view_mode">tree,form</field>
+        <field name="view_id" ref="view_hide_action_menu_button_config_tree"/>
+    </record>
+
+    <menuitem id="menu_hide_action_menu_button_config" name="Hide Action Menus" groups="base.group_erp_manager"
+              action="action_hide_action_menu_button_config"/>
+
+</odoo>
+
