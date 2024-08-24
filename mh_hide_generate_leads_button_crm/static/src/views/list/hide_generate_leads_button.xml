@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<templates>
+    <t t-name="LeadMiningRequest.generate_leads_button" owl="1">
+        <t t-if="!isHideGenerateLeads">
+            <button t-if="isSalesManager" type="button" class="btn btn-secondary o_button_generate_leads" t-on-click="onClickGenerateLead">
+                Generate Leads
+            </button>
+        </t>
+    </t>
+</templates>
+

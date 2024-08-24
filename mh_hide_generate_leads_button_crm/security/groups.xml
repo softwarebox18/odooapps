@@ -1,0 +1,8 @@
+<?xml version="1.0"?>
+<odoo>
+    <data>
+        <record id="group_hide_generate_leads" model="res.groups">
+            <field name="name">Hide Generate Leads CRM Button</field>
+        </record>
+    </data>
+</odoo>
