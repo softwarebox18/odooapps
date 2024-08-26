@@ -1,14 +1,14 @@
 # Part of Odoo. See LICENSE file for full copyright and licensing details.
 {
-    'name': 'Hide & Show Delete Action Menu Button Dynamically',
-    'summary': """Hide & Show Delete Action Menu Button Dynamically""",
+    'name': 'Hide Delete | Duplicate | Export | Export All | Archive | Unarchive Action Menu Button Dynamically',
+    'summary': """Hide Delete | Duplicate | Export | Export All | Archive | Unarchive Action Menu Button Dynamically""",
     'sequence': -1,
     'version': '17.0.1.0.0',
     'category': 'Extra Tools',
     'author': 'Software Box',
     'website': 'http://softwarebox18@gmail.com',
     'module_type': 'industries',
-    'price': '4.36',
+    'price': '7.83',
     'currency': 'USD',
     'depends': ['base', 'web'],
     'data': [
@@ -21,7 +21,7 @@
     'application': True,
     'assets': {
         'web.assets_backend': [
-            'mh_hide_delete_button_dynamically/static/src/views/**/*',
+            'mh_all_in_one_hide_action_menu/static/src/views/**/*',
         ],
     },
     'license': 'OPL-1',

@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<templates>
+    <t t-name="mh_all_in_one_hide_action_menu.web.ExportAll" t-inherit="web.ExportAll" t-inherit-mode="extension">
+        <!-- Hide the export all button -->
+        <xpath expr="//DropdownItem" position="replace">
+            <DropdownItem class="'o_export_all_menu'" onSelected.bind="onDirectExportData">
+                <!-- Apply the if condition before the icon and text -->
+                <t t-if="!state.hideExportAllListButton">
+                    <i class="fa fa-fw fa-upload me-1"/>Export All
+                </t>
+            </DropdownItem>
+        </xpath>
+    </t>
+</templates>
+

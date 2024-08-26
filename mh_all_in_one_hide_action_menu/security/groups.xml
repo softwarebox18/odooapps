@@ -1,0 +1,24 @@
+<?xml version="1.0"?>
+<odoo>
+    <data>
+        <record id="group_hide_delete_menu" model="res.groups">
+            <field name="name">Hide Delete Menu</field>
+        </record>
+        <record id="group_hide_duplicate_menu" model="res.groups">
+            <field name="name">Hide Duplicate Menu</field>
+        </record>
+        <record id="group_hide_export_menu" model="res.groups">
+            <field name="name">Hide Export Menu</field>
+        </record>
+        <record id="group_hide_archive_menu" model="res.groups">
+            <field name="name">Hide Archive Menu</field>
+        </record>
+        <record id="group_hide_unarchive_menu" model="res.groups">
+            <field name="name">Hide Unarchive Menu</field>
+        </record>
+
+        <record id="group_hide_export_all_button" model="res.groups">
+            <field name="name">Hide Export All Button</field>
+        </record>
+    </data>
+</odoo>
