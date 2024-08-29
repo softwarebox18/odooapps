@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <record id="inherit_account_report_form_salesperson" model="ir.ui.view">
+        <field name="name">account.report.form.inherit.salesperson</field>
+        <field name="model">account.report</field>
+        <field name="inherit_id" ref="account_reports.account_report_form"/>
+        <field name="arch" type="xml">
+            <field name="filter_partner" position="after">
+                <field name="filter_sales_person"/>
+            </field>
+        </field>
+    </record>
+
+    <record id="account_reports.partner_ledger_report" model="account.report">
+        <!-- Add the new field filter_sales_person after filter_partner -->
+        <field name="filter_sales_person" eval="True"/>
+
+        <field name="column_ids">
+            <record id="partner_ledger_report_sale_person" model="account.report.column">
+                <field name="name">Sale Person</field>
+                <field name="expression_label">sales_person</field>
+                <field name="figure_type">string</field>
+                <field name="sequence" eval="1"/>
+            </record>
+        </field>
+
+    </record>
+
+</odoo>

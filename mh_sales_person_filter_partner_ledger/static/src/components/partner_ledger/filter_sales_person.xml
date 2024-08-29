@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<templates>
+    <t t-name="mh_sales_person_filter_partner_ledger.AccountReportFilterSP">
+        <Dropdown togglerClass="'btn btn-secondary'">
+            <t t-set-slot="toggler">
+                <i class="fa fa-users me-1"/>Salesperson
+            </t>
+
+            <div class="dropdown-item">
+                <label>Sales Person</label>
+                <MultiRecordSelector t-props="getMultiRecordSelectorProps('res.users', 'salesperson_ids')"/>
+            </div>
+
+        </Dropdown>
+    </t>
+</templates>
