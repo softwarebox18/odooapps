@@ -4,7 +4,7 @@
     'summary': """Hide Generate Leads Button from CRM""",
     'sequence': -1,
     'version': '16.0.1.0.0',
-    'category': 'CRM',
+    'category': 'Extra Tools',
     'author': 'Software Box',
     'website': 'http://softwarebox18@gmail.com',
     'module_type': 'industries',
