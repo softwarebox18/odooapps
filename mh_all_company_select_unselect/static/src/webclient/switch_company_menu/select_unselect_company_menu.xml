@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<templates id="template" xml:space="preserve">
+    <!-- Extend the original FormLabel template -->
+    <t t-name="mh_all_company_select_unselect.SwitchCompanyMenu" t-inherit="web.SwitchCompanyMenu" t-inherit-mode="extension">
+        <xpath expr="//Dropdown/t" position="after">
+            <DropdownItem class="'p-0 select_unselect_all_companies'" t-on-click="toggleSelectAllCompanies">
+                <div role="button" class="d-flex flex-grow-1 align-items-center py-0 ps-2">
+                    <span class='company_label pe-3 fw-bold'>Select/Unselect All Companies</span>
+                </div>
+            </DropdownItem>
+        </xpath>
+    </t>
+</templates>
