@@ -8,7 +8,7 @@
     'author': 'Software Box',
     'website': 'http://softwarebox18@gmail.com',
     'module_type': 'industries',
-    'price': '25.32',
+    'price': '46.69',
     'currency': 'USD',
     'depends': ['base', 'web'],
     'data': [
