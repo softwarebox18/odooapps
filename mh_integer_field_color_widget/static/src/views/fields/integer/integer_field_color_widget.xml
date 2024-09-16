@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<templates id="template" xml:space="preserve">
+    <!-- Extend the original FormLabel template -->
+    <t t-name="mh_integer_field_color_widget.ColorChangingIntegerField" t-inherit="web.IntegerField" t-inherit-mode="primary">
+        <xpath expr="//input" position="attributes">
+            <!-- Bind the style dynamically using t-att-style -->
+<!--            <attribute name="t-att-style">`background-color: green;`</attribute>-->
+            <attribute name="t-att-style">`background-color: ${state.bgColor}; color: ${state.textColor};`</attribute>
+            <!-- Bind the class dynamically using t-attf-class -->
+            <attribute name="t-attf-class">#{state.className}</attribute>
+        </xpath>
+    </t>
+</templates>

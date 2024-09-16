@@ -1,0 +1,189 @@
+<section class="oe_container">
+    <div class="oe_row oe_spaced">
+        <div class="oe_span12">
+            <h2 class="oe_slogan">Dynamic Color-Changing Integer Field Widget Based on Threshold or Value (Odoo16)</h2>
+            <p>This Odoo app allows users to dynamically change the background and text color of any integer field based on a threshold value. The app introduces a customizable widget that automatically adjusts the visual representation of integer fields, allowing users to define their own colors for values below and above the threshold. Whether for financial figures, performance metrics, or other numeric values, users can easily tailor the display according to their preferences.</p>
+            <p>With this app, users can configure both the background and text colors for integer fields, making it easier to visually identify values that exceed or fall below critical thresholds. Fully customizable, this app enables users to define specific thresholds and assign colors accordingly, providing greater flexibility and control over how data is displayed in Odoo.</p>
+        </div>
+    </div>
+</section>
+
+<section class="oe_container oe_dark">
+    <div class="oe_row oe_spaced">
+        <div class="oe_span12">
+            <h2 class="oe_slogan">How It Works</h2>
+        </div>
+        <div class="oe_span12">
+          <div class="mx-auto">
+             <a href="https://youtu.be/MPrt1LWNqaw" target="_blank" class="shadow rounded py-3 px-4 mb-2 s_tooltip_tabs_tooltip_image s_figure_link text-center btn" style="border-width:1px; border-style:solid; border-color:#1b325f; color:#1b325f; text-decoration:none; border-radius:0.25rem !important; display:inline-block; font-size:20px; font-weight:bold; width:100%"><span class="align-middle">Click here to watch video</span></a>
+          </div>
+       </div>
+    </div>
+</section>
+
+<section class="oe_container">
+    <div class="oe_row oe_spaced">
+        <div class="oe_span12">
+            <h2 class="oe_slogan">Key Features</h2>
+        </div>
+
+        <div class="oe_span12">
+            <p class="oe_mt32">
+                <ul>
+                    <li>
+                        <strong>Dynamic Options:</strong>Dynamically changes background and text color based on a user-defined threshold for integer fields.
+                    </li>
+                    <li>
+                        <strong>Fully customizable:</strong>Set different background and text colors for values below and above the threshold.
+                    </li>
+                    <li>
+                        <strong>Efficient Management:</strong>Easy integration with any integer field in Odoo using the <b>widget</b> and <b>options</b> attributes.
+                    </li>
+                    <li>
+                        <strong>Visual Representation:</strong>Enhances visual data representation, making it easier to interpret integer values at a glance.
+                    </li>
+                    <li>
+                        <strong>Supported Options:</strong>Supported configuration options include threshold value, background color, and text color for both below and above threshold scenarios.
+                    </li>
+                    <li>
+                        <strong>Ideal for Numeric Fields:</strong>Ideal for numeric fields such as budgets, quantities, and performance metrics.
+                    </li>
+                </ul>
+            </p>
+        </div>
+        <div class="oe_span12">
+            <div class="oe_demo oe_picture oe_screenshot">
+                <img src="main.PNG">
+            </div>
+        </div>
+    </div>
+</section>
+
+<section class="oe_container">
+    <div class="oe_row oe_spaced">
+        <div class="oe_span12">
+            <h2 class="oe_slogan">Configuration</h2>
+        </div>
+
+        <div class="oe_span12">
+            <p>How to Use the Widget in an Integer Field</p>
+            <p class="oe_mt32">
+                <ul>
+                    <li>
+                        Define the integer field in your Odoo form.
+                    </li>
+                    <li>
+                        Add the <b>color_integer</b> widget to the integer field using the XML view definition.
+                    </li>
+                    <li>
+                        Configure the <b>options</b> attribute to define the <b>threshold value</b> and assign the desired <b>background and text colors</b>.
+                    </li>
+                </ul>
+            </p>
+            <p>Explanation of Options</p>
+            <p class="oe_mt32">
+                <ul>
+                    <li>
+                       <strong>threshold:</strong>The integer value that acts as a boundary for color changes. Values below or equal to this will use the <b>belowThresholdColor</b>, and values above will use the <b>aboveThresholdColor</b>.
+                    </li>
+                    <li>
+                       <strong>belowThresholdColor:</strong>The background color for values less than or equal to the threshold.
+                    </li>
+                    <li>
+                       <strong>aboveThresholdColor:</strong>The background color for values greater than the threshold.
+                    </li>
+                    <li>
+                       <strong>belowThresholdTextColor:</strong>The text color for values below or equal to the threshold.
+                    </li>
+                    <li>
+                       <strong>aboveThresholdTextColor:</strong>The text color for values above the threshold.
+                    </li>
+                </ul>
+            </p>
+        </div>
+        <div class="oe_span12">
+            <div class="oe_demo oe_picture oe_screenshot">
+                <img src="1_mh_integer_field_color_widget.PNG">
+            </div>
+        </div>
+    </div>
+</section>
+
+<section class="oe_container">
+    <div class="oe_row oe_spaced">
+        <div class="oe_span12">
+            <h2 class="oe_slogan">Examples of Using the App</h2>
+        </div>
+
+        <div class="oe_span12">
+            <p class="oe_mt32">
+                <ul>
+                    <li>
+                        <strong>Homework Distance Tracker:</strong>You have an integer field Homework Distance, where you track the distance students live from school. If the distance is less than or equal to 10 kilometers, display a green background with white text. If the distance exceeds 10 kilometers, display a red background with white text.
+                    </li>
+                    <li>
+                        <strong>Sales Quota Tracker:</strong>In the Sales Quota integer field, you track whether a salesperson meets their monthly target. If the quota is below or equal to 50 units, display a yellow background with black text, indicating under performance. For quotas above 50 units, display a blue background with white text.
+                    </li>
+                    <li>
+                        <strong>Stock Levels:</strong>In your warehouse, you use an integer field Stock Level to track available stock. For stock levels below 20 units, display an orange background with black text, signaling low stock. For levels above 20, use a light blue background with white text.
+                    </li>
+                    <li>
+                        <strong>Employee Performance Rating:</strong>You use the integer field Performance Rating to assess employee performance. For ratings below or equal to 70, display a pink background with white text to signal a warning. For ratings above 70, display a green background with white text.
+                    </li>
+                </ul>
+            </p>
+        </div>
+        <div class="oe_span12">
+            <div class="oe_demo oe_picture oe_screenshot">
+                <img src="2_mh_integer_field_color_widget.PNG">
+            </div>
+        </div>
+    </div>
+</section>
+
+
+<section class="oe_container">
+    <div class="oe_row oe_spaced">
+        <div class="oe_span12">
+            <h2 class="oe_slogan">Why Choose This App?</h2>
+        </div>
+
+        <div class="oe_span12">
+            <p class="oe_mt32">
+                <ul>
+                    <li>
+                        <strong>Visual Clarity:</strong>By dynamically changing the colors of integer fields, this app provides immediate visual feedback, helping users identify critical values and thresholds easily.
+                    </li>
+                    <li>
+                        <strong>Customizability:</strong>Users have full control over the threshold and colors, allowing them to adapt the display to fit their specific business needs.
+                    </li>
+                    <li>
+                        <strong>Efficiency:</strong>This app enhances user experience by making key data points stand out visually, saving time spent analyzing or searching for specific values.
+                    </li>
+                    <li>
+                        <strong>Versatility:</strong>Suitable for any scenario where integer fields are used to represent important metrics like performance, stock levels, or sales targets.
+                    </li>
+                </ul>
+            </p>
+        </div>
+    </div>
+</section>
+
+<section class="oe_container" style="padding-top:100px; padding-bottom:20px">
+    <div class="oe_row oe_spaced">
+        <center>
+            <div class="col-md-12" style="margin:auto !important; width:70%; padding:30px; border:20px solid #0e51e8; border-radius:30px">
+                <h2 style="font-weight:600; text-align:center; width:100%">Need Any Help?</h2>
+                <hr style="margin-top:0px; margin-bottom:2%; border:0; text-align:center; border-top:3px solid #d21c22; width:5%">
+
+                <h4 style="font-size:18px"> Free 60 Days Support. </h4>
+                <h4 style="font-size:16px"> SoftwareBox will provide FREE 60 days support for any doubt, queries, and bug fixing (excluding data recovery) or any type of issues related to this module. This is applicable from the date of purchase.</h4>
+                <br>
+                <h2 style="font-weight:600; text-align:center; width:100%">Email US</h2>
+                <p><b>softwarebox18@gmail.com</b></p>
+            </div>
+        </center>
+    </div>
+</section>
+
+
