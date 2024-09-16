@@ -1,0 +1,3 @@
+id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
+many2one_field_change_label_config_admin,access many2one_field_change_label_config,model_many2one_field_change_label_config,base.group_erp_manager,1,1,1,1
+many2one_field_change_label_config_lines_admin,access many2one_field_change_label_config_lines,model_many2one_field_change_label_config_lines,base.group_erp_manager,1,1,1,1
