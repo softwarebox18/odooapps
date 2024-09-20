@@ -1,0 +1,33 @@
+.o_step_input_widget {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem; /* Adds space between elements */
+}
+
+.o_step_input_button {
+    border: 1px solid #ddd;
+    background-color: #f8f9fa;
+    padding: 0.5rem 1rem;
+    cursor: pointer;
+    flex: 0 0 auto;
+}
+
+.o_step_input_field {
+    text-align: center;
+    border: 1px solid #ddd;
+    padding: 0.5rem;
+    margin-left: 2px;
+    min-width: 2rem; /* Adjust this value to fit your needs */
+    flex: 1;
+    max-width: 6rem; /* Prevents input field from exceeding container width */
+}
+
+.o_step_input_widget .btn {
+    width: 1.5rem;
+    height: 1.5rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: bold; /* Makes the text bold */
+    font-size: 1.25rem; /* Optionally increase font size for better visibility */
+}

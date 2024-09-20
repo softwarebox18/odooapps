@@ -1,0 +1,189 @@
+<section class="oe_container">
+    <div class="oe_row oe_spaced">
+        <div class="oe_span12">
+            <h2 class="oe_slogan">Step Input Widget for Integer Fields (Odoo16)</h2>
+            <p><b>Step Input Widget</b>, designed specifically for integer fields. This widget provides an intuitive interface with <b>increment (+) and decrement (-)</b> buttons, allowing users to quickly adjust whole number values in predefined <b>steps</b>. It supports additional configuration for <b>minimum and maximum</b> values, ensuring that your integer fields stay within the desired range.</p>
+            <p>Whether you are managing inventory, setting integer-based limits, or adjusting quantities, this step input widget helps streamline the user experience while maintaining precision and control over data entry.</p>
+        </div>
+    </div>
+</section>
+
+<section class="oe_container oe_dark">
+    <div class="oe_row oe_spaced">
+        <div class="oe_span12">
+            <h2 class="oe_slogan">How It Works</h2>
+        </div>
+        <div class="oe_span12">
+          <div class="mx-auto">
+             <a href="https://youtu.be/-2s431M4Fj8" target="_blank" class="shadow rounded py-3 px-4 mb-2 s_tooltip_tabs_tooltip_image s_figure_link text-center btn" style="border-width:1px; border-style:solid; border-color:#1b325f; color:#1b325f; text-decoration:none; border-radius:0.25rem !important; display:inline-block; font-size:20px; font-weight:bold; width:100%"><span class="align-middle">Click here to watch video</span></a>
+          </div>
+       </div>
+    </div>
+</section>
+
+<section class="oe_container">
+    <div class="oe_row oe_spaced">
+        <div class="oe_span12">
+            <h2 class="oe_slogan">Key Features</h2>
+        </div>
+
+        <div class="oe_span12">
+            <p class="oe_mt32">
+                <ul>
+                    <li>
+                        <strong>Step-Based Value Adjustment:</strong>Use increment and decrement buttons to change integer field values in customizable steps.
+                    </li>
+                    <li>
+                        <strong>Configurable Min and Max Values:</strong>Set boundaries to restrict the range of allowed integer values, ensuring data accuracy.
+                    </li>
+                    <li>
+                        <strong>Flexible Configuration:</strong>Choose step size, minimum, and maximum values to fit your business needs.
+                    </li>
+                    <li>
+                        <strong>Works Seamlessly:</strong>Automatically integrates with Odoo's integer fields for both forms and views.
+                    </li>
+                    <li>
+                        <strong>No Limits:</strong>The widget allows infinite increases or decreases when no min/max values are defined.
+                    </li>
+                    <li>
+                        <strong>User-Friendly Interface:</strong>Enhance the user experience by providing a quick and clear way to input integer values.
+                    </li>
+                </ul>
+            </p>
+        </div>
+        <div class="oe_span12">
+            <div class="oe_demo oe_picture oe_screenshot">
+                <img src="main.PNG">
+            </div>
+        </div>
+    </div>
+</section>
+
+<section class="oe_container">
+    <div class="oe_row oe_spaced">
+        <div class="oe_span12">
+            <h2 class="oe_slogan">Configuration</h2>
+        </div>
+
+        <div class="oe_span12">
+            <p>How to Use the Widget in an Integer Field</p>
+            <p class="oe_mt32">
+                <ul>
+                    <li>
+                        To enable the Step Input Widget, simply add the widget to any integer field in your Odoo model using the <b>widget="step_input"</b> option.
+                    </li>
+                    <li>
+                        widget="step_input" options="{'step': 1, 'min_value': 0, 'max_value': 10}"
+                    </li>
+                    <li>
+                        Configure the <b>options</b> attribute to define the <b>threshold value</b> and assign the desired <b>background and text colors</b>.
+                    </li>
+                </ul>
+            </p>
+            <p>Options Available</p>
+            <p class="oe_mt32">
+                <ul>
+                    <li>
+                       <strong>step:</strong>Defines how much the value should increase or decrease with each click of the <b>increment (+) or decrement (-)</b> buttons. Default is 1.
+                    </li>
+                    <li>
+                       <strong>min_value:</strong>Sets the minimum value allowed for the field. If not defined, the minimum is set to -Infinity.
+                    </li>
+                    <li>
+                       <strong>max_value:</strong>Sets the maximum value allowed for the field. If not defined, the maximum is set to Infinity.
+                    </li>
+                    <li>
+                       <strong>Behavior Without Min/Max Values:</strong>If you do not specify min_value or max_value, the widget will allow the user to increment or decrement the value indefinitely in either direction. This can be useful for cases where no boundary is required.
+                    </li>
+                </ul>
+            </p>
+        </div>
+        <div class="oe_span12">
+            <div class="oe_demo oe_picture oe_screenshot">
+                <img src="main.PNG">
+            </div>
+        </div>
+    </div>
+</section>
+
+<section class="oe_container">
+    <div class="oe_row oe_spaced">
+        <div class="oe_span12">
+            <h2 class="oe_slogan">Examples of Using the Widget</h2>
+        </div>
+
+        <div class="oe_span12">
+            <p class="oe_mt32">
+                <ul>
+                    <li>
+                        <strong>Inventory Quantity Management:</strong>Use the widget to set or adjust stock levels in increments of 1, ensuring that inventory updates are quick, accurate, and stay within predefined limits.
+                    </li>
+                    <li>
+                        <strong>Discount Percent Control:</strong>Manage discount percentages easily by restricting them to a minimum of 0 and a maximum of 50, ensuring no over-discounts are applied.
+                    </li>
+                    <li>
+                        <strong>Employee Performance Rating:</strong>In HR, employee performance might be rated on a scale from 1 to 10, with only whole numbers allowed. This widget ensures that ratings are given consistently and can be adjusted quickly by clicking + or -.
+                    </li>
+                    <li>
+                        <strong>Order Quantity in Sales Orders:</strong>In the sales process, it’s important to control the number of units ordered for products. By setting a minimum quantity (e.g., 1) and adjusting quantities in specific steps, sales reps can ensure orders are handled efficiently.
+                    </li>
+                </ul>
+            </p>
+        </div>
+<!--        <div class="oe_span12">-->
+<!--            <div class="oe_demo oe_picture oe_screenshot">-->
+<!--                <img src="main.PNG">-->
+<!--            </div>-->
+<!--        </div>-->
+    </div>
+</section>
+
+
+<section class="oe_container">
+    <div class="oe_row oe_spaced">
+        <div class="oe_span12">
+            <h2 class="oe_slogan">Why Choose This App?</h2>
+        </div>
+
+        <div class="oe_span12">
+            <p class="oe_mt32">
+                <ul>
+                    <li>
+                        <strong>Customizability:</strong>Configure the widget to meet the exact needs of your business by defining steps, minimum, and maximum values.
+                    </li>
+                    <li>
+                        <strong>Efficiency:</strong>Save time by allowing users to quickly adjust values with simple increment and decrement buttons, rather than typing them manually.
+                    </li>
+                    <li>
+                        <strong>Data Accuracy:</strong>Ensure data integrity by setting clear boundaries on integer values.
+                    </li>
+                    <li>
+                        <strong>Easy to Use:</strong>Integrates seamlessly into Odoo, requiring minimal setup and no complex configurations.
+                    </li>
+                    <li>
+                        <strong>Flexible Integration:</strong>Works across various integer fields, making it versatile for a wide range of use cases like inventory management, HR, pricing, and more.
+                    </li>
+                </ul>
+            </p>
+        </div>
+    </div>
+</section>
+
+<section class="oe_container" style="padding-top:100px; padding-bottom:20px">
+    <div class="oe_row oe_spaced">
+        <center>
+            <div class="col-md-12" style="margin:auto !important; width:70%; padding:30px; border:20px solid #0e51e8; border-radius:30px">
+                <h2 style="font-weight:600; text-align:center; width:100%">Need Any Help?</h2>
+                <hr style="margin-top:0px; margin-bottom:2%; border:0; text-align:center; border-top:3px solid #d21c22; width:5%">
+
+                <h4 style="font-size:18px"> Free 60 Days Support. </h4>
+                <h4 style="font-size:16px"> SoftwareBox will provide FREE 60 days support for any doubt, queries, and bug fixing (excluding data recovery) or any type of issues related to this module. This is applicable from the date of purchase.</h4>
+                <br>
+                <h2 style="font-weight:600; text-align:center; width:100%">Email US</h2>
+                <p><b>softwarebox18@gmail.com</b></p>
+            </div>
+        </center>
+    </div>
+</section>
+
+
