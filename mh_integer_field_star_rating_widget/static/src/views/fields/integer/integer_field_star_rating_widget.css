@@ -1,0 +1,13 @@
+.rating-widget {
+    display: inline-block;
+    font-size: 1.5rem;  /* Adjust size as needed */
+    cursor: pointer;
+}
+
+.rating-widget .fa-star {
+    color: lightgray;
+}
+
+.rating-widget .fa-star.checked {
+    color: gold;
+}

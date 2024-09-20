@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <record id="view_employee_form_inherited_for_widget" model="ir.ui.view">
+        <field name="name">hr.employee.form.inherit.for.widget</field>
+        <field name="model">hr.employee</field>
+        <field name="inherit_id" ref="hr.view_employee_form"/>
+        <field name="arch" type="xml">
+            <!-- Locate the children field and add the widget -->
+            <field name="children" position="attributes">
+                <attribute name="string">Rating</attribute>
+                <attribute name="widget">star_rating</attribute>
+                <attribute name="options">{'maxStars': 10, 'filledColor': 'golden', 'unfilledColor': 'grey', 'starSpacing': 3, 'starWidth': 30}</attribute>
+            </field>
+        </field>
+    </record>
+</odoo>
+
+
