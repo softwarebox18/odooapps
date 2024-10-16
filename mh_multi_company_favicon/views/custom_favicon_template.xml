@@ -1,0 +1,9 @@
+<?xml version="1.0"?>
+<odoo>
+    <template id="custom_web_layout" inherit_id="web.layout" name="Custom Web Layout">
+        <xpath expr="//link[@rel='shortcut icon']" position="replace">
+<!--            <link type="image/x-icon" rel="shortcut icon" t-att-href="request.env.company and request.env.company.favicon_url or '/web/static/img/favicon.ico'"/>-->
+            <link type="image/x-icon" rel="shortcut icon" t-att-href="res_company and res_company.favicon_url or '/web/static/img/favicon.ico'"/>
+        </xpath>
+    </template>
+</odoo>
