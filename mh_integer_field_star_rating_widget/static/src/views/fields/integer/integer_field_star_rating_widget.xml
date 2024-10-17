@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<templates id="template" xml:space="preserve">
+    <t t-name="mh_integer_field_step_input_widget.StarRatingWidget">
+        <div class="rating-widget">
+            <t t-foreach="stars" t-as="star" t-key="star">
+                <!-- Display filled or empty stars based on the current rating -->
+                <span
+                    t-on-click="() => onStarClick(star)"
+                    t-att-class="state.rating >= star ? 'fa fa-star checked' : 'fa fa-star'"
+                    role="button"
+                    aria-label="Rating"
+                    t-attf-style="color: #{state.rating >= star ? filledColor : unfilledColor}; font-size: #{starWidth}px; margin-right: #{starSpacing}px;"
+                />
+            </t>
+        </div>
+        <!-- Hidden input field to hold the actual integer value -->
+        <input type="hidden" t-att-id="props.id" t-att-value="state.rating"/>
+    </t>
+</templates>
