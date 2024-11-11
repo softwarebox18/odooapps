@@ -1,0 +1,155 @@
+<odoo>
+    <record id="view_screen_recording_tree" model="ir.ui.view">
+        <field name="name">screen.recording.tree</field>
+        <field name="model">screen.recording</field>
+        <field name="arch" type="xml">
+            <tree>
+                <field name="status"/>
+                <field name="user_id"/>
+                <field name="duration"/>
+                <field name="recorded_at"/>
+            </tree>
+        </field>
+    </record>
+
+    <record id="view_screen_recording_form" model="ir.ui.view">
+        <field name="name">screen.recording.form</field>
+        <field name="model">screen.recording</field>
+        <field name="arch" type="xml">
+            <form>
+                <sheet>
+                    <group>
+                        <field name="status"/>
+                        <field name="user_id"/>
+                        <field name="failed_attempts"/>
+                        <field name="video_url" invisible="1"/>
+                        <field name="duration"/>
+                        <field name="recorded_at"/>
+                    </group>
+                    <!-- Video preview section -->
+                    <group>
+                        <field name="video_url" widget="video_preview_widget" string=""/>
+                    </group>
+                </sheet>
+            </form>
+        </field>
+    </record>
+
+    <!-- Action to open Screen Recordings -->
+    <record id="action_screen_recording" model="ir.actions.act_window">
+        <field name="name">Screen Recordings</field>
+        <field name="res_model">screen.recording</field>
+        <field name="view_mode">tree,form</field>
+        <field name="view_id" ref="view_screen_recording_tree"/>
+    </record>
+
+    <!-- Parent menu item for Screen Recordings (under Timesheets) -->
+    <menuitem id="menu_screen_recording_root" name="Screen Recordings" parent="hr_timesheet.timesheet_menu_root" groups="base.group_erp_manager"/>
+
+    <!-- Screen Recording menu item that links to the action -->
+    <menuitem id="menu_screen_recording" name="Recordings" parent="menu_screen_recording_root" action="action_screen_recording" groups="base.group_erp_manager"/>
+
+    <record id="res_config_settings_view_form_screen_recording" model="ir.ui.view">
+		<field name="name">res.config.settings.view.form.inherit.screen.recording</field>
+		<field name="model">res.config.settings</field>
+		<field name="priority" eval="25"/>
+		<field name="inherit_id" ref="hr_timesheet.res_config_settings_view_form"/>
+		<field name="arch" type="xml">
+            <xpath expr="//div[@data-key='hr_timesheet']/div[@name='section_leaves']" position="after">
+                <div name="section_leaves" groups="base.group_no_one">
+                    <h2>Screen Recording</h2>
+                    <div class="row mt16 o_settings_container" name="screen_recording_setting_container">
+                        <div class="col-12 col-lg-6 o_setting_box" id="enable_recording_setting" title="Enable or disable screen recording functionality.">
+                            <div class="o_setting_left_pane">
+                                <field name="enable_recording"/>
+                            </div>
+                            <div class="o_setting_right_pane" id="enable_recording">
+                                <label for="enable_recording"/>
+                                <span class="fa fa-check" title="Enable or disable screen recording functionality."/>
+                                <div class="text-muted">
+                                    Enable or disable screen recording functionality.
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-12 col-lg-6 o_setting_box" id="screen_recording_setting" title="Set the duration of video recordings in seconds.">
+                            <div class="o_setting_right_pane">
+                                <div>
+                                    <label string="Recording Check Interval (in Minutes)" for="recording_check_interval"/>
+                                    <span class="fa fa-clock-o" title="Set the interval (in minutes) for checking attendance status and scheduling screen recording."/>
+                                    <div class="text-muted">
+                                        Set the interval (in minutes) for checking attendance status and scheduling screen recording.
+                                    </div>
+                                    <div class="content-group mt16">
+                                        <field name="recording_check_interval" colspan="4" nolabel="1"/>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row mt16 o_settings_container" name="recording_delay_setting_container">
+                        <div class="col-12 col-lg-6 o_setting_box" id="recording_delay_setting" title="Set the minimum delay time (in minutes) before starting a recording.">
+                            <div class="o_setting_right_pane">
+                                <div>
+                                    <label string="Minimum Recording Delay (in Minutes)" for="recording_min_delay"/>
+                                    <span class="fa fa-clock-o" title="Set the minimum delay time (in minutes) before starting a recording."/>
+                                    <div class="text-muted">
+                                        Set the minimum delay time (in minutes) before starting a recording.
+                                    </div>
+                                    <div class="content-group mt16">
+                                        <field name="recording_min_delay" colspan="4" nolabel="1"/>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-12 col-lg-6 o_setting_box" title="Set the maximum delay time (in minutes) before starting a recording.">
+                            <div class="o_setting_right_pane">
+                                <div>
+                                    <label string="Maximum Recording Delay (in Minutes)" for="recording_max_delay"/>
+                                    <span class="fa fa-clock-o" title="Set the maximum delay time (in minutes) before starting a recording."/>
+                                    <div class="text-muted">
+                                        Set the maximum delay time (in minutes) before starting a recording.
+                                    </div>
+                                    <div class="content-group mt16">
+                                        <field name="recording_max_delay" colspan="4" nolabel="1"/>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row mt16 o_settings_container" name="screen_recording_setting_container">
+                        <div class="col-12 col-lg-6 o_setting_box" id="screen_recording_setting" title="Set the duration of video recordings in seconds.">
+                            <div class="o_setting_right_pane">
+                                <div>
+                                    <label string="Recording Duration (In Seconds)" for="recording_duration"/>
+                                    <span class="fa fa-clock-o" title="Set the duration of video recordings in seconds."/>
+                                    <div class="text-muted">
+                                        Set the duration of video recordings in seconds.
+                                    </div>
+                                    <div class="content-group mt16">
+                                        <field name="recording_duration" colspan="4" nolabel="1"/>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-12 col-lg-6 o_setting_box" title="Set screen sharing timeout in seconds.">
+                            <div class="o_setting_right_pane">
+                                <div>
+                                    <label string="Screen Sharing Timeout (In Seconds)" for="screen_sharing_timeout"/>
+                                    <span class="fa fa-clock-o" title="Set screen sharing timeout in seconds."/>
+                                    <div class="text-muted">
+                                        Set screen sharing timeout in seconds.
+                                    </div>
+                                    <div class="content-group mt16">
+                                        <field name="screen_sharing_timeout" colspan="4" nolabel="1"/>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+        </xpath>
+		</field>
+	</record>
+
+</odoo>

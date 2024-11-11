@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<templates id="template" xml:space="preserve">
+    <t t-name="mh_screen_recording.ScreenRecorderSystray" owl="1">
+        <div class="o_systray_icon" t-on-click="startRecording">
+            <!-- Icon toggles based on recording state -->
+            <i t-att-class="state.isRecording ? 'icon-red-dot' : 'fa fa-video'" style="display: none;"/>
+        </div>
+
+        <!-- Display recording controls if recording is active -->
+<!--        <t t-if="state.isRecording">-->
+<!--            <div class="screen-recording-controls">-->
+<!--                <button class="btn btn-secondary" t-on-click="stopRecording">Stop</button>-->
+<!--                <button class="btn btn-secondary" t-on-click="state.isPaused ? resumeRecording : pauseRecording">-->
+<!--                    <t t-esc="state.isPaused ? 'Resume' : 'Pause'"/>-->
+<!--                </button>-->
+<!--            </div>-->
+<!--        </t>-->
+    </t>
+</templates>

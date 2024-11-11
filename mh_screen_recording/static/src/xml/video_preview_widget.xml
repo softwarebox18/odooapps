@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<templates id="template" xml:space="preserve">
+    <t t-name="mh_screen_recording.VideoWidget" owl="1">
+        <div>
+            <video t-ref="videoElement" controls="" width="400"></video>
+        </div>
+    </t>
+</templates>
+
+<!--<?xml version="1.0" encoding="UTF-8" ?>-->
+<!--<templates>-->
+<!--    &lt;!&ndash;    Creating widget to preview video&ndash;&gt;-->
+<!--    <t t-name="VideoWidget">-->
+<!--        <div>-->
+<!--&lt;!&ndash;            <video t-ref="videoElement" controls="" width="400"></video>&ndash;&gt;-->
+<!--            <video width="320" height="240" controls="">-->
+<!--                <source src="" type="video/mp4"/>-->
+<!--            </video>-->
+<!--        </div>-->
+<!--    </t>-->
+<!--</templates>-->
+
+
