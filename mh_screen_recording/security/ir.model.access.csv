@@ -1,0 +1,4 @@
+id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
+access_model_screen_recording,screen.recording,model_screen_recording,base.group_erp_manager,1,1,1,1
+access_model_screen_recording_user,user.screen.recording,model_screen_recording,base.group_user,1,1,1,0
+access_model_ir_config_parameter,ir.config_parameter,base.model_ir_config_parameter,base.group_user,1,0,0,0
