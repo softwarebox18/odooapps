@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<templates id="template" xml:space="preserve">
+    <!-- Extend the original FormLabel template -->
+    <t t-name="mh_hide_chatter_view_buttons.Chatter" t-inherit="mail.Chatter" t-inherit-mode="extension">
+        <xpath expr='//button[contains(@class, "o-mail-Chatter-sendMessage")]' position="replace">
+            <button t-if="props.hasMessageList and !state.hideSendMessage" class="o-mail-Chatter-sendMessage btn text-nowrap me-1" t-att-class="{
+                    'btn-primary': state.composerType !== 'note',
+                    'btn-secondary': state.composerType === 'note',
+                    'active': state.composerType === 'message',
+                    'my-2': !props.compactHeight
+                }" t-att-disabled="!state.thread.hasWriteAccess and !(state.thread.hasReadAccess and state.thread.canPostOnReadonly) and props.threadId" data-hotkey="m" t-on-click="() => this.toggleComposer('message')">
+                    Send message
+            </button>
+        </xpath>
+
+        <xpath expr='//button[contains(@class, "o-mail-Chatter-logNote")]' position="replace">
+            <button t-if="props.hasMessageList and !state.hideLogNote" class="o-mail-Chatter-logNote btn text-nowrap me-2" t-att-class="{
+                    'btn-primary active': state.composerType === 'note',
+                    'btn-secondary': state.composerType !== 'note',
+                    'my-2': !props.compactHeight
+                }" data-hotkey="shift+m" t-on-click="() => this.toggleComposer('note')">
+                    Log note
+                </button>
+        </xpath>
+
+        <xpath expr='//button[contains(@class, "o-mail-Chatter-activity")]' position="replace">
+            <button t-if="props.hasActivities and !state.hideActivities" class="o-mail-Chatter-activity btn btn-secondary text-nowrap" t-att-class="{ 'my-2': !props.compactHeight }" data-hotkey="shift+a" t-on-click="scheduleActivity">
+                <i class="fa fa-clock-o me-1"/>
+                <span>Activities</span>
+            </button>
+        </xpath>
+
+        <xpath expr='//t[@t-call="mail.Chatter.attachFiles"]' position="replace">
+            <t t-if="!state.hideFileUpload">
+                <t t-call="mail.Chatter.attachFiles"/>
+            </t>
+        </xpath>
+
+        <xpath expr='//Dropdown[contains(@class, "o-mail-Followers")]' position="replace">
+            <Dropdown t-if="props.hasFollowers and !state.hideMailFollowers" position="'bottom-end'" disabled="isDisabled" class="'o-mail-Followers d-flex me-1'" menuClass="'o-mail-Followers-dropdown flex-column'" menuDisplay="'d-flex'" title="followerButtonLabel" togglerClass="'o-mail-Followers-button btn btn-link text-action px-1 ' + (props.compactHeight ? '' : 'my-2')">
+                <t t-set-slot="toggler">
+                    <i class="fa fa-user-o me-1" role="img"/>
+                    <i t-if="state.thread.id and state.thread.followersCount === undefined" class="fa fa-circle-o-notch fa-spin"/>
+                    <span t-else="" class="o-mail-Followers-counter" t-esc="state.thread.followersCount ?? 0"/>
+                </t>
+                <t t-set-slot="default">
+                    <FollowerList onAddFollowers.bind="onAddFollowers" onFollowerChanged.bind="onFollowerChanged" thread="state.thread"/>
+                </t>
+            </Dropdown>
+        </xpath>
+
+        <xpath expr='//button[contains(@class, "o-mail-Chatter-follow")]' position="replace">
+            <button t-if="!state.thread.selfFollower and !state.hideFollow" class="o-mail-Chatter-follow btn btn-link  px-0 text-600" t-on-click="onClickFollow">
+                <div class="position-relative">
+                    <span class="d-flex invisible text-nowrap">
+                        <i class="me-1 fa fa-fw fa-eye-slash"/><t t-out="followingText.length > unfollowText.length ? followingText : unfollowText"/>
+                    </span>
+                    <span class="position-absolute end-0 top-0">
+                        Follow
+                    </span>
+                </div>
+            </button>
+        </xpath>
+    </t>
+</templates>

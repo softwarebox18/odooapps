@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <record id="hide_chatter_view_buttons_tree" model="ir.ui.view">
+        <field name="name">hide.chatter.view.buttons.tree</field>
+        <field name="model">hide.chatter.view.buttons</field>
+        <field name="arch" type="xml">
+            <tree string="Hide Chatter View and Button">
+                <field name="user_id"/>
+                <field name="is_active"/>
+            </tree>
+        </field>
+    </record>
+
+    <record id="hide_chatter_view_buttons_form" model="ir.ui.view">
+        <field name="name">hide.chatter.view.buttons.form</field>
+        <field name="model">hide.chatter.view.buttons</field>
+        <field name="arch" type="xml">
+            <form string="Hide Chatter View and Button">
+                <sheet>
+                    <group>
+                        <field name="user_id" required="1" help="Select user for which you want to hide chatters component dynamically." placeholder="Select user for which you want to hide chatters component dynamically."/>
+                        <field name="is_active"/>
+                    </group>
+                        <notebook colspan="4">
+                            <page string="Hide Chatter View and Button">
+                                <field name="hide_chatter_line_ids">
+                                    <tree editable="bottom">
+                                        <field name='model_id' help="Choose model to hide chatter components." placeholder="Choose model to hide chatter components."/>
+                                        <field name='hide_send_message' help="Hide Send Message Button."/>
+                                        <field name='hide_log_note' help="Hide Log Note Button."/>
+                                        <field name='hide_activities' help="Hide Activities Button."/>
+                                        <field name='hide_file_upload' help="Hide File Upload Button."/>
+                                        <field name='hide_mail_followers' help="Hide Mail Followers Button."/>
+                                        <field name='hide_follow' help="Hide Follow Button."/>
+                                    </tree>
+                                </field>
+                            </page>
+                        </notebook>
+                </sheet>
+            </form>
+        </field>
+    </record>
+
+    <record id="action_hide_chatter_view_buttons" model="ir.actions.act_window">
+        <field name="name">Hide Chatter View and Button</field>
+        <field name="res_model">hide.chatter.view.buttons</field>
+        <field name="view_mode">tree,form</field>
+        <field name="view_id" ref="hide_chatter_view_buttons_tree"/>
+    </record>
+
+    <menuitem id="menu_hide_chatter_view_buttons" web_icon="mh_hide_chatter_view_buttons,static/description/icon.png" name="Chatter View Setting" groups="base.group_erp_manager"
+              action="action_hide_chatter_view_buttons"/>
+
+</odoo>
