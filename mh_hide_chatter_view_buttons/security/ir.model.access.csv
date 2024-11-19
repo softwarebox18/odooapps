@@ -1,0 +1,6 @@
+id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
+hide_chatter_view_buttons_admin,admin access hide_chatter_view_buttons,model_hide_chatter_view_buttons,base.group_erp_manager,1,1,1,1
+hide_chatter_view_buttons_lines_admin,admin access hide_chatter_view_buttons_lines,model_hide_chatter_view_buttons_lines,base.group_erp_manager,1,1,1,1
+
+hide_chatter_view_buttons_user,user access hide_chatter_view_buttons,model_hide_chatter_view_buttons,base.group_user,1,0,0,0
+hide_chatter_view_buttons_lines_user,user access hide_chatter_view_buttons_lines,model_hide_chatter_view_buttons_lines,base.group_user,1,0,0,0
