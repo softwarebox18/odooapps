@@ -1,0 +1,83 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<templates id="template" xml:space="preserve">
+    <t t-name="mh_hide_chatter_view_buttons.ChatterTopbar" t-inherit="mail.ChatterTopbar" t-inherit-mode="extension" owl="1">
+        <xpath expr="//button[hasclass('o_ChatterTopbar_buttonSendMessage')]" position="replace">
+            <t t-if="!state.hideSendMessage">
+                <button class="btn btn-link o_ChatterTopbar_button o_ChatterTopbar_buttonSendMessage"
+                    type="button"
+                    t-att-class="{
+                        'o-active': chatter.composerView and !chatter.composerView.composer.isLog,
+                        'o-bordered': chatter.hasExternalBorder,
+                    }"
+                    t-att-disabled="chatter.isDisabled"
+                    title="Send a message"
+                    data-hotkey="m"
+                    t-on-click="chatter.onClickSendMessage"
+                >
+                    Send message
+                </button>
+            </t>
+        </xpath>
+
+        <xpath expr="//button[hasclass('o_ChatterTopbar_buttonLogNote')]" position="replace">
+            <t t-if="!state.hideLogNote">
+                <button class="btn btn-link o_ChatterTopbar_button o_ChatterTopbar_buttonLogNote"
+                    type="button"
+                    t-att-class="{
+                        'o-active': chatter.composerView and chatter.composerView.composer.isLog,
+                        'o-bordered': chatter.hasExternalBorder,
+                    }"
+                    t-att-disabled="chatter.isDisabled"
+                    t-on-click="chatter.onClickLogNote"
+                    title="Log a note"
+                    data-hotkey="shift+m"
+                >
+                    Log note
+                </button>
+            </t>
+        </xpath>
+
+        <xpath expr="//button[hasclass('o_ChatterTopbar_buttonScheduleActivity')]" position="replace">
+            <t t-if="!state.hideActivities">
+                <button class="btn btn-link o_ChatterTopbar_button o_ChatterTopbar_buttonScheduleActivity" type="button" t-att-disabled="chatter.isDisabled" t-on-click="chatter.onClickScheduleActivity" title="Schedule an activity" data-hotkey="shift+a">
+                    <i class="fa fa-clock-o"/>
+                    Schedule activity
+                </button>
+            </t>
+        </xpath>
+
+        <xpath expr="//button[hasclass('o_ChatterTopbar_buttonAttachments')]" position="replace">
+            <t t-if="!state.hideFileUpload">
+                <button class="btn btn-link o_ChatterTopbar_button o_ChatterTopbar_buttonAttachments" type="button" t-att-disabled="chatter.isDisabled" t-on-click="chatter.onClickButtonAttachments">
+                    <i class="fa fa-paperclip"/>
+                    <t t-if="chatter.isDisabled or !chatter.isShowingAttachmentsLoading">
+                        <span class="o_ChatterTopbar_buttonCount o_ChatterTopbar_buttonAttachmentsCount" t-esc="chatter.thread ? chatter.thread.allAttachments.length : 0"/>
+                    </t>
+                    <t t-else="">
+                        <i class="o_ChatterTopbar_buttonAttachmentsCountLoader fa fa-circle-o-notch fa-spin" aria-label="Attachment counter loading..."/>
+                    </t>
+                </button>
+            </t>
+        </xpath>
+
+        <xpath expr='//FollowerListMenu[contains(@class, "o_ChatterTopbar_followerListMenu")]' position="replace">
+            <t t-if="!state.hideMailFollowers">
+                <FollowerListMenu
+                    class="o_ChatterTopbar_button o_ChatterTopbar_followerListMenu"
+                    isDisabled="chatter.isDisabled"
+                    threadLocalId="chatter.thread.localId"
+                />
+            </t>
+        </xpath>
+
+        <xpath expr='//FollowButton[contains(@class, "o_ChatterTopbar_followButton")]' position="replace">
+            <t t-if="!state.hideFollow">
+                <FollowButton
+                    class="o_ChatterTopbar_button o_ChatterTopbar_followButton"
+                    isDisabled="chatter.isDisabled"
+                    threadLocalId="chatter.thread.localId"
+                />
+            </t>
+        </xpath>
+    </t>
+</templates>
