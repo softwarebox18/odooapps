@@ -1,0 +1,85 @@
+<odoo>
+    <record id="act_report_xml_view_inherit" model="ir.ui.view">
+        <field name="model">ir.actions.report</field>
+        <field name="inherit_id" ref="base.act_report_xml_view" />
+        <field name="arch" type="xml">
+            <page name="advanced" position="after">
+                <page name='watermark' string="Watermark Settings">
+                    <group>
+                        <field name="watermark_type"/>
+                    </group>
+                    <group>
+                        <group>
+                        <field name="watermark_text" required="watermark_type == 'Text Watermark'" invisible="watermark_type != 'Text Watermark'"/>
+                        <field name="font_name" required="watermark_type == 'Text Watermark'" invisible="watermark_type != 'Text Watermark'"/>
+                        <field name="font_size" required="watermark_type == 'Text Watermark'" invisible="watermark_type != 'Text Watermark'"/>
+                    </group>
+                    <group>
+                        <field name="font_color" required="watermark_type == 'Text Watermark'" invisible="watermark_type != 'Text Watermark'"/>
+                        <field name="opacity" required="watermark_type == 'Text Watermark'" invisible="watermark_type != 'Text Watermark'"/>
+                        <field name="rotation" required="watermark_type == 'Text Watermark'" invisible="watermark_type != 'Text Watermark'"/>
+                    </group>
+
+                    <group>
+                        <field name="scale_factor" required="watermark_type in ('Text Watermark','Image or PDF Watermark')" invisible="watermark_type not in ('Text Watermark','Image or PDF Watermark')"/>
+                        <field name="upload_watermark" required="watermark_type == 'Image or PDF Watermark'" invisible="report_type != 'qweb-pdf' or watermark_type != 'Image or PDF Watermark'" filename="watermark_fname"/>
+                        <field name="watermark_fname" class="oe_inline" invisible="1"/>
+                    </group>
+                    </group>
+
+                </page>
+            </page>
+        </field>
+    </record>
+
+    <record id="res_config_settings_view_form_watermark" model="ir.ui.view">
+        <field name="name">res.config.report.settings</field>
+        <field name="model">res.config.settings</field>
+        <field name="inherit_id" ref="base_setup.res_config_settings_view_form"/>
+        <field name="arch" type="xml">
+            <xpath expr="//block[@name='companies_setting_container']" position="after">
+                <block title="Watermark Settings" name="watermark_setting_container">
+                <setting string="Add Watermark in PDF Reports" help="Add Watermark in PDF for All Companies Reports" company_dependent="1" class="col-12 col-lg-6 o_setting_box" id="watermark_settings">
+                    <div>
+                        <field name="watermark_type" nolabel="1"/>
+                    </div>
+                </setting>
+                <setting invisible="watermark_type != 'Text Watermark'" id="watermark_text" string="Watermark Text" help="Set Watermark Text.">
+                    <field name="watermark_text" required="watermark_type == 'Text Watermark'"/>
+                </setting>
+
+                <setting invisible="watermark_type != 'Text Watermark'" id="font_name" string="Font" help="Select Font.">
+                    <field name="font_name" required="watermark_type == 'Text Watermark'"/>
+                </setting>
+
+                <setting invisible="watermark_type != 'Text Watermark'" id="font_size" string="Font Size" help="Set Font Size Between 50-100.">
+                    <field name="font_size" required="watermark_type == 'Text Watermark'"/>
+                </setting>
+
+                <setting invisible="watermark_type != 'Text Watermark'" id="font_color" string="Font Color" help="Set Font Color.">
+                    <field name="font_color" required="watermark_type == 'Text Watermark'"/>
+                </setting>
+
+
+                <setting invisible="watermark_type != 'Text Watermark'" id="opacity" string="Opacity" help="Set Opacity Between 0-255.">
+                    <field name="opacity" required="watermark_type == 'Text Watermark'"/>
+                </setting>
+
+                <setting invisible="watermark_type != 'Text Watermark'" id="rotation" string="Rotation" help="Set Watermark Rotation Angle like 45 Degree.">
+                    <field name="rotation" required="watermark_type == 'Text Watermark'"/>
+                </setting>
+
+                <setting invisible="watermark_type not in ('Text Watermark','Image or PDF Watermark')" id="scale_factor" string="Scale Factor" help="Set Scale Factor as 1.">
+                    <field name="scale_factor" required="watermark_type in ('Text Watermark','Image or PDF Watermark')" />
+                </setting>
+
+                <setting invisible="watermark_type != 'Image or PDF Watermark'" id="upload_watermark" string="Upload Watermark (PDF/Image)" help="Upload Image or PDF File.">
+                    <field name="upload_watermark" filename="watermark_fname" required="watermark_type == 'Image or PDF Watermark'"/>
+                    <field name="watermark_fname" invisible="1"/>
+                </setting>
+
+                </block>
+            </xpath>
+        </field>
+    </record>
+</odoo>
