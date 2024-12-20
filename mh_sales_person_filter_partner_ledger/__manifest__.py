@@ -7,7 +7,7 @@
     'category': 'Accounting',
     'author': 'Software Box',
     'website': 'http://softwarebox18@gmail.com',
-    'price': '49.71',
+    'price': '29.71',
     'currency': 'USD',
     'depends': ['base', 'account','account_reports'],
     'data': [
