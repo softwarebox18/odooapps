@@ -7,7 +7,7 @@
     'category': 'Sale',
     'author': 'Software Box',
     'website': 'http://softwarebox18@gmail.com',
-    'price': '3.31',
+    'price': '1.10',
     'currency': 'USD',
     'depends': ['base', 'sale'],
     'data': [
