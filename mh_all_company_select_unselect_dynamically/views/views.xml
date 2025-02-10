@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <record id="res_config_settings_view_form" model="ir.ui.view">
+        <field name="name">res.config.settings.view.form.inherit.select.company</field>
+        <field name="model">res.config.settings</field>
+        <field name="inherit_id" ref="base_setup.res_config_settings_view_form"/>
+        <field name="arch" type="xml">
+            <setting id="active_user_setting" position="after">
+                <setting id="email_servers_setting" title="Select/Unselect All Companies By Default" help="If checked, all companies will be selected by default. If unchecked, only the default company will be selected.">
+                    <field name="is_allowed_companies"/>
+                </setting>
+            </setting>
+            <div id="auth_ldap_warning" position="replace"/>
+        </field>
+    </record>
+</odoo>
