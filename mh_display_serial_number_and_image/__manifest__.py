@@ -23,9 +23,12 @@
         'views/templates.xml',
     ],
     'images': ['static/description/main.PNG'],
+    'installable': True,
+    'application': True,
     # only loaded in demonstration mode
     'demo': [
         'demo/demo.xml',
     ],
+    'license': 'OPL-1',
 }
 
