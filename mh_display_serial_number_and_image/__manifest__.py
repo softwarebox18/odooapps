@@ -22,6 +22,7 @@
         'views/views.xml',
         'views/templates.xml',
     ],
+    'images': ['static/description/main.PNG'],
     # only loaded in demonstration mode
     'demo': [
         'demo/demo.xml',
