@@ -1,0 +1,19 @@
+<odoo>
+    <data>
+        <!-- Inherit Sale Order Form View -->
+        <record id="view_order_form_inherit_can_edit" model="ir.ui.view">
+            <field name="name">sale.order.form.inherit.can.edit</field>
+            <field name="model">sale.order</field>
+            <field name="inherit_id" ref="sale.view_order_form" />
+            <field name="arch" type="xml">
+                <xpath expr="//field[@name='order_line']/tree/field[@name='product_id']" position="before">
+                    <field name="serial_number" string="S.N."/>
+                </xpath>
+
+                <xpath expr="//field[@name='order_line']/tree/field[@name='product_template_id']" position="after">
+                    <field name="image_line" widget="image" options="{'size': [64, 64]}"/>
+                </xpath>
+            </field>
+        </record>
+    </data>
+</odoo>

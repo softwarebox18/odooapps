@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+
+    <record id="res_config_settings_view_form" model="ir.ui.view">
+        <field name="name">res.config.settings.view.form.inherit.sale.sr.img</field>
+        <field name="model">res.config.settings</field>
+        <field name="inherit_id" ref="sale.res_config_settings_view_form"/>
+        <field name="arch" type="xml">
+            <setting id="proforma_configuration" position="after">
+                <setting id="show_sr_no_in_report" help="Display Serial Number in Quotation / Sale Order Report">
+                    <field name="show_sr_no_in_report"/>
+                </setting>
+                <setting id="show_product_img_in_report" help="Display Product Image in Quotation / Sale Order Report">
+                    <field name="show_product_img_in_report"/>
+                </setting>
+            </setting>
+        </field>
+    </record>
+
+    <template id="report_saleorder_document_inherit" inherit_id="sale.report_saleorder_document">
+        <!-- Add Serial Number Header -->
+        <xpath expr="//thead/tr/th[@name='th_description']" position="before">
+            <t t-if="doc.company_id.show_sr_no_in_report">
+                <th class="text-start">Sr.No.</th>
+            </t>
+        </xpath>
+        <xpath expr="//thead/tr/th[@name='th_description']" position="after">
+            <t t-if="doc.company_id.show_product_img_in_report">
+                <th class="text-start">Product Image</th>
+            </t>
+        </xpath>
+
+        <!-- Add Serial Number in Rows -->
+        <xpath expr="//td[@name='td_name']" position="before">
+            <t t-if="doc.company_id.show_sr_no_in_report">
+                <td name="td_sn"><span t-field="line.serial_number">1</span></td>
+            </t>
+        </xpath>
+        <xpath expr="//td[@name='td_name']" position="after">
+            <t t-if="doc.company_id.show_product_img_in_report">
+                <td name="td_image"><img t-att-src="image_data_uri(line.display_image)" style="max-width: 8rem; height: auto;" alt="Product Image"/></td>
+            </t>
+        </xpath>
+    </template>
+
+</odoo>
