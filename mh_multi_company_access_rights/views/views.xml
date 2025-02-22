@@ -1,0 +1,21 @@
+<odoo>
+    <data>
+        <record id="view_users_form_inherit" model="ir.ui.view">
+            <field name="name">res.users.form.inherit</field>
+            <field name="model">res.users</field>
+            <field name="inherit_id" ref="base.view_users_form"/>
+            <field name="arch" type="xml">
+                <notebook position="inside">
+                    <page string="Company Groups and Menu Access Rights">
+                        <field name="company_access_ids">
+                            <list editable="bottom">
+                                <field name="company_id" options="{'no_open': 1, 'no_create': 1}"/>
+                                <field name="group_ids" widget="many2many_tags" options="{'no_open': 1, 'no_create': 1}"/>
+                            </list>
+                        </field>
+                    </page>
+                </notebook>
+            </field>
+        </record>
+    </data>
+</odoo>
