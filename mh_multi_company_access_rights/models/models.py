@@ -85,11 +85,11 @@ class ResUsers(models.Model):
         no_one_group = self.env.ref('base.group_no_one')  # Get 'No One' group
 
         menus_to_hide = [
-            self.env.ref("mail.menu_root_discuss"),
-            self.env.ref("calendar.mail_menu_calendar"),
-            self.env.ref("spreadsheet_dashboard.spreadsheet_dashboard_menu_root"),
-            self.env.ref("utm.menu_link_tracker_root"),
-            self.env.ref("base.menu_management"),
+            self.env.ref("mail.menu_root_discuss", raise_if_not_found=False),
+            self.env.ref("calendar.mail_menu_calendar", raise_if_not_found=False),
+            self.env.ref("spreadsheet_dashboard.spreadsheet_dashboard_menu_root", raise_if_not_found=False),
+            self.env.ref("utm.menu_link_tracker_root", raise_if_not_found=False),
+            self.env.ref("base.menu_management", raise_if_not_found=False),
         ]
 
         menus_to_hide = [menu.id for menu in menus_to_hide if menu]  # Filter out None values
