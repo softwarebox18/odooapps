@@ -1,0 +1,5 @@
+id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
+access_res_users_company_access_admin,access.res.users.company.access.admin,model_res_users_company_access,base.group_erp_manager,1,1,1,1
+access_res_users_company_access_manager,access.res.users.company.access,model_res_users_company_access,base.group_user,1,1,1,1
+access_res_groups_company_access,access.res.groups.company.access,base.model_res_groups,base.group_user,1,1,1,1
+access_ir_menu_company_access,access.ir.menu.company.access,base.model_ir_ui_menu,base.group_user,1,1,1,1
