@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <record id="res_config_settings_view_form" model="ir.ui.view">
+        <field name="name">res.config.settings.view.form.inherit.display.partner</field>
+        <field name="model">res.config.settings</field>
+        <field name="inherit_id" ref="base_setup.res_config_settings_view_form"/>
+        <field name="arch" type="xml">
+            <setting id="message_translation_setting" position="after">
+                <setting id="partner_search_fields_setting" title="Select the fields to be used for customer search." help="Select the fields to be used for customer search.">
+                    <field name="partner_search_fields" widget="many2many_tags"/>
+                </setting>
+                <setting id="partner_display_fields_setting" title="Select the fields to display in partner dropdown or many2one field." help="Select the fields to display in partner dropdown or many2one field.">
+                    <field name="partner_display_fields" widget="many2many_tags"/>
+                </setting>
+            </setting>
+        </field>
+    </record>
+</odoo>
