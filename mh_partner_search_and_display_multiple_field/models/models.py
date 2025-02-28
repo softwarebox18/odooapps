@@ -95,41 +95,8 @@ class ResPartner(models.Model):
 
         return result
 
-    # @api.model
-    # def name_search(self, name, args=None, operator='ilike', limit=100):
-    #     if not args:
-    #         args = []
-    #
-    #     # Default search field
-    #     search_fields = ['name']
-    #
-    #     # Fetch additional fields from company settings
-    #     company = self.env.company
-    #     if company.partner_search_fields:
-    #         search_fields.extend(company.partner_search_fields.mapped('name'))
-    #
-    #     # Construct the dynamic search domain with OR conditions
-    #     domain = ['|'] * (len(search_fields) - 1)
-    #     for field in search_fields:
-    #         domain.append((field, operator, name))
-    #
-    #     partners = self.search(domain + args, limit=limit)
-    #
-    #     # Fetch fields for display
-    #     display_fields = company.partner_display_fields.mapped('name') if company.partner_display_fields else []
-    #
-    #     # Manually construct the display names
-    #     result = []
-    #     for partner in partners:
-    #         values = [partner.name]  # Always include default name field
-    #
-    #         for field in display_fields:
-    #             value = getattr(partner, field, None)
-    #             if value:
-    #                 values.append(str(value))  # Convert to string
-    #
-    #         display_name = " | ".join(values)  # Format display name
-    #         result.append((partner.id, display_name))
-    #
-    #     return result
+    @api.depends("name")  # Forces Odoo to refresh the Many2One field
+    def _compute_display_name(self):
+        for rec in self:
+            rec.display_name = rec.name_get()[0][1] if rec else ""
 
