@@ -95,3 +95,8 @@ class ResPartner(models.Model):
 
         return result
 
+    @api.depends("name")  # Forces Odoo to refresh the Many2One field
+    def _compute_display_name(self):
+        for rec in self:
+            rec.display_name = rec.name_search(self.name)[0][1] if rec else ""
+
