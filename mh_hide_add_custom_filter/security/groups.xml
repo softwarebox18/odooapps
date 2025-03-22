@@ -1,0 +1,8 @@
+<?xml version="1.0"?>
+<odoo>
+    <data>
+        <record id="group_hide_add_custom_filter" model="res.groups">
+            <field name="name">Hide Add Custom Filter Menu</field>
+        </record>
+    </data>
+</odoo>
