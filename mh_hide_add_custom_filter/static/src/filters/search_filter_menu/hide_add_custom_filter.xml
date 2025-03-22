@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<templates id="template" xml:space="preserve">
+    <!-- Extend the original FormLabel template -->
+    <t t-name="mh_hide_add_custom_filter.SearchBarMenu" t-inherit="web.SearchBarMenu" t-inherit-mode="extension">
+        <xpath expr="//DropdownItem" position="replace">
+            <t t-if="!showCustomFilter">
+                <DropdownItem class="'o_menu_item o_add_custom_filter'" onSelected.bind="onAddCustomFilterClick">Add Custom Filter</DropdownItem>
+            </t>
+        </xpath>
+    </t>
+</templates>
