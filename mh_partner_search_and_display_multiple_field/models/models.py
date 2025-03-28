@@ -87,10 +87,17 @@ class ResPartner(models.Model):
 
             for field in display_fields:
                 value = getattr(partner, field, None)
-                if value:
+                if value not in [None, False]:  # Avoid empty values
                     values.append(str(value))  # Convert to string
 
-            display_name = " | ".join(values)  # Format display name
+            display_name = " | ".join(filter(None, values))  # Remove empty values
+
+            # for field in display_fields:
+            #     value = getattr(partner, field, None)
+            #     if value:
+            #         values.append(str(value))  # Convert to string
+            #
+            # display_name = " | ".join(values)  # Format display name
             result.append((partner.id, display_name))
 
         return result
