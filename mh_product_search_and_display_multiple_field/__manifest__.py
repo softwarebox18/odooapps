@@ -9,7 +9,7 @@
     'website': 'http://softwarebox18@gmail.com',
     'price': '9.99',
     'currency': 'USD',
-    'depends': ['base', 'sale'],
+    'depends': ['base', 'product', 'sale'],
     'data': [
         'views/views.xml',
         # 'security/ir.model.access.csv',
