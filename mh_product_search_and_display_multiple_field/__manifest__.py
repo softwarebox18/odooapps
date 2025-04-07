@@ -4,7 +4,7 @@
     'summary': """Search and Display Multiple Fields on Product Many2one (Quotation, SO, PO and MO etc) Field in Odoo""",
     'sequence': -1,
     'version': '16.0.1.0.0',
-    'category': 'Sale',
+    'category': 'Discuss',
     'author': 'Software Box',
     'website': 'http://softwarebox18@gmail.com',
     'price': '9.99',
