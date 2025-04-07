@@ -24,7 +24,7 @@ class ResCompanyInh(models.Model):
     )
 
     def _get_partner_domain(self):
-        return [('model', '=', 'res.partner'), ('ttype', 'in', ['char', 'text', 'integer', 'float'])]
+        return [('model', '=', 'res.partner'), ('ttype', 'in', ['char', 'text', 'integer', 'float', 'selection', 'many2one'])]
 
 
 class ResConfigSettings(models.TransientModel):
@@ -87,8 +87,12 @@ class ResPartner(models.Model):
 
             for field in display_fields:
                 value = getattr(partner, field, None)
-                if value:
-                    values.append(str(value))  # Convert to string
+                if value:  # Avoid empty values
+                    # If it's a many2one field, use its display_name
+                    if isinstance(value, models.BaseModel):
+                        values.append(value.display_name)
+                    else:
+                        values.append(str(value))
 
             display_name = " | ".join(values)  # Format display name
             result.append((partner.id, display_name))
