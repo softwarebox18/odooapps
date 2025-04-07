@@ -24,17 +24,11 @@ class ResCompanyInh(models.Model):
     )
 
     def _get_partner_domain(self):
-        return [('model', '=', 'res.partner'), ('ttype', 'in', ['char', 'text', 'integer', 'float'])]
+        return [('model', '=', 'res.partner'), ('ttype', 'in', ['char', 'text', 'integer', 'float', 'selection', 'many2one'])]
 
 
 class ResConfigSettings(models.TransientModel):
     _inherit = 'res.config.settings'
-
-    # company_id = fields.Many2one(  # Explicitly add this field
-    #     'res.company',
-    #     string="Company",
-    #     default=lambda self: self.env.company
-    # )
 
     partner_display_fields = fields.Many2many(
         'ir.model.fields',
@@ -49,9 +43,6 @@ class ResConfigSettings(models.TransientModel):
         string="Customer Search Fields",
         readonly=False
     )
-
-    # def set_values(self):
-    #     super(ResConfigSettings, self).set_values()
 
 
 class ResPartner(models.Model):
@@ -88,16 +79,14 @@ class ResPartner(models.Model):
             for field in display_fields:
                 value = getattr(partner, field, None)
                 if value not in [None, False]:  # Avoid empty values
-                    values.append(str(value))  # Convert to string
+                    # If it's a many2one field, use its display_name
+                    if isinstance(value, models.BaseModel):
+                        values.append(value.display_name)
+                    else:
+                        values.append(str(value))
 
             display_name = " | ".join(filter(None, values))  # Remove empty values
 
-            # for field in display_fields:
-            #     value = getattr(partner, field, None)
-            #     if value:
-            #         values.append(str(value))  # Convert to string
-            #
-            # display_name = " | ".join(values)  # Format display name
             result.append((partner.id, display_name))
 
         return result

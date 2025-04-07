@@ -7,7 +7,7 @@
     'category': 'Discuss',
     'author': 'Software Box',
     'website': 'http://softwarebox18@gmail.com',
-    'price': '6.99',
+    'price': '9.99',
     'currency': 'USD',
     'depends': ['base', 'mail'],
     'data': [
