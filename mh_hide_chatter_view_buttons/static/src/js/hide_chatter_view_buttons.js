@@ -46,7 +46,8 @@ patch(Chatter.prototype, {
             const chatterId = chatter[0].id;
             const chatterLines = await this.orm.searchRead(
                 "hide.chatter.view.buttons.lines",
-                [["hide_chatter_id", "=", chatterId],["model_id", "=", currentModel]],
+                //[["hide_chatter_id", "=", chatterId],["model_id", "=", currentModel]],
+                [["hide_chatter_id", "=", chatterId],["model_name", "=", currentModel]],
                 ["model_id", "hide_send_message","hide_log_note","hide_activities","hide_file_upload","hide_mail_followers","hide_follow"]
             );
             if (chatterLines.length > 0) {

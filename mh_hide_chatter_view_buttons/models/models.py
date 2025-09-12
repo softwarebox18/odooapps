@@ -23,6 +23,7 @@ class hide_chatter_view_buttons_lines(models.Model):
     _name = 'hide.chatter.view.buttons.lines'
 
     model_id = fields.Many2one('ir.model', string='Model')
+    model_name = fields.Char(related="model_id.model", store=True, readonly=True)
     hide_send_message = fields.Boolean(string="Hide Send Message", default=False)
     hide_log_note = fields.Boolean(string="Hide Log Note", default=False)
     hide_activities = fields.Boolean(string="Hide Activities", default=False)
@@ -33,7 +34,14 @@ class hide_chatter_view_buttons_lines(models.Model):
 
     # Apply the unique constraint in the model definition
     _sql_constraints = [
-        ('model_id_unique',
-         'UNIQUE (model_id)',
-         'A configuration with this model already exists. Please use a different model.')
+        (
+            'unique_user_model',
+            'unique(hide_chatter_id, model_id)',
+            'A configuration with this user and model already exists.'
+        )
     ]
+    # _sql_constraints = [
+    #     ('model_id_unique',
+    #      'UNIQUE (model_id)',
+    #      'A configuration with this model already exists. Please use a different model.')
+    # ]
