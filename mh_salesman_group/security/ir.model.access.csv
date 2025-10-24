@@ -3,10 +3,7 @@ access_res_partner_salesman,res.partner,base.model_res_partner,mh_salesman_group
 access_res_users_salesman,res.users,base.model_res_users,mh_salesman_group.group_sale_salesman,1,1,1,0
 access_account_journal_salesman,account.journal,account.model_account_journal,mh_salesman_group.group_sale_salesman,1,1,1,0
 access_account_group_salesman,account.group,account.model_account_group,mh_salesman_group.group_sale_salesman,1,0,0,0
-access_account_report_ac_user_salesman,account.report.ac.user,account_reports.model_account_report,mh_salesman_group.group_sale_salesman,1,0,0,0
-access_account_report_readonly_salesman,account.report.readonly,account_reports.model_account_report,mh_salesman_group.group_sale_salesman,1,0,0,0
-access_account_report_expression_salesman,account.report.expression,account_reports.model_account_report_expression,mh_salesman_group.group_sale_salesman,1,0,0,0
-access_account_report_line_readonly_salesman,account.report.line.readonly,account_reports.model_account_report_line,mh_salesman_group.group_sale_salesman,1,0,0,0
+
 access_product_pricelist_salesman,product.pricelist,product.model_product_pricelist,mh_salesman_group.group_sale_salesman,1,0,0,0
 access_product_template_salesman,product.template,product.model_product_template,mh_salesman_group.group_sale_salesman,1,0,0,0
 access_product_category_salesman,product.category,product.model_product_category,mh_salesman_group.group_sale_salesman,1,0,0,0

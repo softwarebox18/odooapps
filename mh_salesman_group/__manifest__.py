@@ -11,7 +11,7 @@
     'price': '5',
     'currency': 'EUR',
     'module_type': 'industries',
-    'depends': ['base','sale_management','product','stock','account','account_reports','uom','mail',],
+    'depends': ['base','sale_management','product','stock','account','uom','mail',],
     'data': [
         'security/security.xml',
         'security/ir.model.access.csv',
