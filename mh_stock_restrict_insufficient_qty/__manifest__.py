@@ -18,7 +18,7 @@
         'views/views.xml',
     ],
     'images': [
-        # 'static/description/main.PNG'
+        'static/description/main.PNG'
     ],
     'license': 'OPL-1',
     'installable': True,
