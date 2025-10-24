@@ -1,0 +1,180 @@
+<section class="oe_container">
+    <div class="oe_row oe_spaced">
+        <div class="oe_span12">
+            <h2 class="oe_slogan">Stock Availability Control for Salesman – Block Delivery & Internal Transfers When Stock Is Insufficient (Odoo18)</h2>
+            <p>This Odoo module adds an <strong>automatic stock validation rule</strong> for users belonging to the <strong>Salesman group</strong>.
+It prevents the creation or validation of <strong>Delivery Orders (Outgoing Transfers) and Internal Transfers</strong> when the available stock is less than the ordered quantity, ensuring that no product is delivered or moved without sufficient inventory.</p>
+            <p>The module extends the standard Odoo warehouse flow by introducing real-time stock checks during both record creation and validation stages.</p>
+            <p>It works only for users in the Salesman group, allowing managers and administrators to bypass the restriction for operational flexibility.</p>
+        </div>
+    </div>
+</section>
+
+<section class="oe_container oe_dark">
+    <div class="oe_row oe_spaced">
+        <div class="oe_span12">
+            <h2 class="oe_slogan">This module depends on</h2>
+        </div>
+        <div class="oe_span12">
+          <div class="mx-auto">
+             <a href="https://apps.odoo.com/apps/modules/18.0/mh_salesman_group" target="_blank" class="shadow rounded py-3 px-4 mb-2 s_tooltip_tabs_tooltip_image s_figure_link text-center btn" style="border-width:1px; border-style:solid; border-color:#1b325f; color:#1b325f; text-decoration:none; border-radius:0.25rem !important; display:inline-block; font-size:20px; font-weight:bold; width:100%"><span class="align-middle">mh_salesman_group (Salesman Groups Module)</span></a>
+          </div>
+       </div>
+    </div>
+</section>
+
+<!--<section class="oe_container oe_dark">-->
+<!--    <div class="oe_row oe_spaced">-->
+<!--        <div class="oe_span12">-->
+<!--            <h2 class="oe_slogan">How It Works</h2>-->
+<!--        </div>-->
+<!--        <div class="oe_span12">-->
+<!--          <div class="mx-auto">-->
+<!--             <a href="https://youtu.be/q3LP92EViqI" target="_blank" class="shadow rounded py-3 px-4 mb-2 s_tooltip_tabs_tooltip_image s_figure_link text-center btn" style="border-width:1px; border-style:solid; border-color:#1b325f; color:#1b325f; text-decoration:none; border-radius:0.25rem !important; display:inline-block; font-size:20px; font-weight:bold; width:100%"><span class="align-middle">Click here to watch video</span></a>-->
+<!--          </div>-->
+<!--       </div>-->
+<!--    </div>-->
+<!--</section>-->
+
+<section class="oe_container">
+    <div class="oe_row oe_spaced">
+        <div class="oe_span12">
+            <h2 class="oe_slogan">Key Features</h2>
+        </div>
+
+        <div class="oe_span12">
+            <p class="oe_mt32">
+                <ul>
+                    <li>
+                        <strong>Automatic Stock Check:</strong>Before creating or validating Delivery Orders and Internal Transfers.
+                    </li>
+                    <li>
+                        <strong>Blocks transactions:</strong>When available stock is lower than the ordered quantity.
+                    </li>
+                    <li>
+                        <strong>Applies only to Salesman group users:</strong>Keeping control strict yet flexible.
+                    </li>
+                    <li>
+                        <strong>Works on both record creation and validation stages:</strong>To prevent data bypass
+                    </li>
+                    <li>
+                        <strong>Accurately calculates available stock:</strong>Including reserved quantities in real time.
+                    </li>
+                    <li>
+                        <strong>Seamless integration:</strong>With Odoo’s stock and warehouse flow.
+                    </li>
+                    <li>
+                        <strong>Depends on:</strong>mh_salesman_group to manage access and group-based restriction.
+                    </li>
+                </ul>
+            </p>
+        </div>
+        <div class="oe_span12">
+            <div class="oe_demo oe_picture oe_screenshot">
+                <img src="main.PNG">
+            </div>
+        </div>
+    </div>
+</section>
+
+<section class="oe_container">
+    <div class="oe_row oe_spaced">
+        <div class="oe_span12">
+            <h2 class="oe_slogan">How to Configure</h2>
+        </div>
+
+        <div class="oe_span12">
+            <p class="oe_mt32">
+                <ul>
+                    <li>
+                        <strong>Install the dependency module "Salesman Groups (mh_salesman_group)".</strong>
+                    </li>
+                    <li>
+                        <strong>Navigate to Settings, Users & Companies, Users.</strong>
+                    </li>
+                    <li>
+                        <strong>Open a user form and assign the Salesman group (Salesman under Sales category).</strong>
+                    </li>
+                    <li>
+                        <strong>Install this module.</strong>
+                    </li>
+                    <li>
+                        <strong>When a Salesman tries to:</strong>
+                        <ul>
+                            <li>
+                                <strong>Create a Delivery Order (Outgoing Transfer)</strong>
+                            </li>
+                            <li>
+                                <strong>Create an Internal Transfer</strong>
+                            </li>
+                        </ul>
+                    </li>
+                    <li>
+                        <strong>The system will automatically validate available stock.</strong>
+                    </li>
+                    <li>
+                        <strong>If the available quantity is less than required, a User Error will be displayed and the operation will be blocked.</strong>
+                    </li>
+                    <li>
+                        <strong>Other users (like Admin or Managers) can still proceed without restriction.</strong>
+                    </li>
+                </ul>
+            </p>
+        </div>
+        <div class="oe_span12">
+            <div class="oe_demo oe_picture oe_screenshot">
+                <img src="main.PNG">
+            </div>
+        </div>
+    </div>
+</section>
+
+
+<section class="oe_container">
+    <div class="oe_row oe_spaced">
+        <div class="oe_span12">
+            <h2 class="oe_slogan">Why Choose This App?</h2>
+        </div>
+
+        <div class="oe_span12">
+            <p class="oe_mt32">
+                <ul>
+                    <li>
+                        <strong>Avoid stock mismatches:</strong>ensure only available products are transferred or delivered.
+                    </li>
+                    <li>
+                        <strong>Salesman-level control:</strong>restrict warehouse actions to prevent human errors.
+                    </li>
+                    <li>
+                        <strong>Manager override flexibility:</strong>non-salesman users can still process orders freely.
+                    </li>
+                    <li>
+                        <strong>No configuration hassle:</strong>works automatically once installed.
+                    </li>
+                    <li>
+                        <strong>Perfect for businesses:</strong>that need controlled delivery and transfer validation by sales staff.
+                    </li>
+                </ul>
+            </p>
+        </div>
+    </div>
+</section>
+
+<section class="oe_container" style="padding-top:100px; padding-bottom:20px">
+    <div class="oe_row oe_spaced">
+        <center>
+            <div class="col-md-12" style="margin:auto !important; width:70%; padding:30px; border:20px solid #0e51e8; border-radius:30px">
+                <h2 style="font-weight:600; text-align:center; width:100%">Need Any Help?</h2>
+                <hr style="margin-top:0px; margin-bottom:2%; border:0; text-align:center; border-top:3px solid #d21c22; width:5%">
+
+                <h4 style="font-size:18px"> Free 60 Days Support. </h4>
+                <h4 style="font-size:16px"> SoftwareBox will provide FREE 60 days support for any doubt, queries, and bug fixing (excluding data recovery) or any type of issues related to this module. This is applicable from the date of purchase.</h4>
+                <br>
+                <h2 style="font-weight:600; text-align:center; width:100%">Email US</h2>
+                <p><b>softwarebox18@gmail.com</b></p>
+            </div>
+        </center>
+    </div>
+</section>
+
+
