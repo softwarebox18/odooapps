@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<templates>
+    <t t-name="mh_bank_reconciliation_report_check_date.BRFilterDate">
+<xpath expr="//div[@id='filter_date_divider_range']" position="after">
+<t t-if="controller.options.filter_check_date">
+
+ <div class="dropdown-divider"/>
+
+        <Dropdown menuClass="'account_report_filter date'">
+            <button class="btn btn-secondary">
+                <i class="fa fa-calendar me-1"/>
+                <t t-esc="controller.options.check_date?.label || 'Check Date'"/>
+            </button>
+
+            <t t-set-slot="content">
+                <!-- Today -->
+                <DropdownItem
+                    class="{ 'selected': controller.options.check_date?.filter === 'today' }"
+                    onSelected="() => this.selectCheckDateFilter('today')"
+                    closingMode="'none'"
+                >
+                    As of Today
+                </DropdownItem>
+
+
+                <div class="dropdown-divider"/>
+
+                <!-- Custom Date Range -->
+<div class="dropdown-item date d-flex flex-column">
+    <label
+        class="d-flex align-items-center filter_name mb-2"
+        t-on-click="() => this.selectCheckDateFilter('custom')"
+    >
+        Specific Date
+    </label>
+
+    <div
+        class="d-flex justify-content-between align-items-center gap-2"
+        t-if="controller.options.check_date?.filter === 'custom'"
+        t-on-click="(ev) => ev.stopPropagation()"
+    >
+        <div class="d-flex flex-column flex-grow-1">
+            <label class="small text-muted mb-1">From</label>
+            <DateTimeInput
+                type="'date'"
+                value="dateFrom('check_date')"
+                onChange="(date) => this.setCheckDateFrom(date)"
+            />
+        </div>
+
+        <div class="d-flex flex-column flex-grow-1">
+            <label class="small text-muted mb-1">To</label>
+            <DateTimeInput
+                type="'date'"
+                value="dateTo('check_date')"
+                onChange="(date) => this.setCheckDateTo(date)"
+            />
+        </div>
+    </div>
+</div>
+            </t>
+        </Dropdown>
+
+        <div class="dropdown-divider"/>
+
+
+</t>
+        </xpath>
+    </t>
+</templates>

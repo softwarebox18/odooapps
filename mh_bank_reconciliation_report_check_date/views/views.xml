@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <record id="inherit_account_report_filters" model="ir.ui.view">
+        <field name="name">account_reports.report.filters.check_date</field>
+        <field name="model">account.report</field>
+        <field name="inherit_id" ref="account_reports.account_report_form"/>
+        <field name="arch" type="xml">
+          <xpath expr="//field[@name='filter_date_range']" position="after">
+            <field name="filter_check_date"/>
+          </xpath>
+        </field>
+    </record>
+</odoo>

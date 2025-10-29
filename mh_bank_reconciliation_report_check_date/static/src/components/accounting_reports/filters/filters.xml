@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<templates>
+    <t t-name="mh_bank_reconciliation_report_check_date.BRFilter" t-inherit="account_reports.AccountReportFiltersCustomizable">
+        <xpath expr="." position="inside">
+<!--        <xpath expr="//div[@id='filter_date']/t[@t-call]" position="replace">-->
+            <t t-call="mh_bank_reconciliation_report_check_date.BRFilterDate"/>
+        </xpath>
+    </t>
+</templates>
