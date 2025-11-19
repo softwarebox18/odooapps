@@ -8,7 +8,7 @@
     'author': "SoftwareBox",
     'website': "https://softwarebox18@gmail.com",
     'category': 'Accounting/Payment',
-    'price': '290',
+    'price': '255',
     'currency': 'EUR',
     'depends': ['payment'],
     'data': [
