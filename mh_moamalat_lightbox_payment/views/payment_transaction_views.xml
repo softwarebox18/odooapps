@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <record id="view_payment_transaction_form_moamalat" model="ir.ui.view">
+        <field name="name">payment.transaction.form.moamalat</field>
+        <field name="model">payment.transaction</field>
+        <field name="inherit_id" ref="payment.payment_transaction_form"/>
+        <field name="arch" type="xml">
+            <field name="provider_reference" position="after">
+<!--                groups="base.group_no_one"-->
+                <field name="moamalat_system_reference" readonly="1" invisible="provider_code!='moamalat_lightbox'"/>
+                <field name="moamalat_network_reference" readonly="1" invisible="provider_code!='moamalat_lightbox'"/>
+                <field name="moamalat_payer_account" readonly="1" invisible="provider_code!='moamalat_lightbox'"/>
+                <field name="moamalat_payer_name" readonly="1" invisible="provider_code!='moamalat_lightbox'"/>
+                <field name="moamalat_txn_date" readonly="1" invisible="provider_code!='moamalat_lightbox'"/>
+            </field>
+        </field>
+    </record>
+</odoo>

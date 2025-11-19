@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <template id="mh_moamalat_lightbox_payment.method_form" inherit_id="payment.method_form">
+        <input name="o_payment_radio" position="attributes">
+            <attribute name="t-att-data-moamalat-inline-form-values">
+                provider_sudo._moamalat_get_inline_form_values(currency)
+            </attribute>
+        </input>
+    </template>
+</odoo>

@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <record id="view_payment_provider_form_moamalat" model="ir.ui.view">
+        <field name="name">payment.provider.form.moamalat</field>
+        <field name="model">payment.provider</field>
+        <field name="inherit_id" ref="payment.payment_provider_form"/>
+        <field name="arch" type="xml">
+            <group name="provider_credentials" position="inside">
+                <group invisible="code != 'moamalat_lightbox'">
+                    <field name="moamalat_mid" required="code == 'moamalat_lightbox' and state!='disabled'"/>
+                    <field name="moamalat_tid" required="code == 'moamalat_lightbox' and state!='disabled'"/>
+                    <field name="moamalat_secret" password="True" required="code == 'moamalat_lightbox' and state!='disabled'"/>
+                </group>
+            </group>
+        </field>
+    </record>
+</odoo>

@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo noupdate="1">
+    <record id="payment_method_moamalat_lightbox" model="payment.method">
+        <field name="name">Moamalat Lightbox</field>
+        <field name="code">moamalat_lightbox</field>
+        <field name="sequence">1000</field>
+        <field name="active">False</field>
+        <field name="image" type="base64" file="mh_moamalat_lightbox_payment/static/img/moamalat.png"/>
+        <field name="support_tokenization">False</field>
+        <field name="support_express_checkout">False</field>
+        <field name="support_refund">partial</field>
+<!--        <field name="supported_country_ids" eval="[ref('base.ae')]"/>-->
+        <field name="supported_currency_ids" eval="[ref('base.USD')]"/>
+    </record>
+</odoo>

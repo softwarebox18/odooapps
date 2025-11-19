@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo noupdate="1">
+    <record id="payment_provider_moamalat_lightbox" model="payment.provider">
+        <field name="name">Moamalat Lightbox</field>
+        <field name="code">moamalat_lightbox</field>
+        <field name="image_128" type="base64" file="mh_moamalat_lightbox_payment/static/img/moamalat.png"/>
+<!--        <field name="module_id" ref="base.mh_moamalat_lightbox_payment"/>-->
+        <field name="payment_method_ids" eval="[Command.set([ref('mh_moamalat_lightbox_payment.payment_method_moamalat_lightbox')])]"/>
+    </record>
+</odoo>
