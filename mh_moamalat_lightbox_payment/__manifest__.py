@@ -26,7 +26,7 @@
             'mh_moamalat_lightbox_payment/static/src/**/*',
         ],
     },
-    'images': ['static/description/main.PNG'],
+    'images': ['static/description/moamalat_lightbox_payment.PNG'],
     'license': 'OPL-1',
 }
 
