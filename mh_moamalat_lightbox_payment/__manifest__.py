@@ -5,7 +5,7 @@
     'description': """Moamalat LightBox Payment Gateway Integration – Secure Online Payments""",
     'sequence': -1,
     'version': '18.0.1.0.0',
-    'author': "SoftwareBox",
+    'author': "Software Box",
     'website': "https://softwarebox18@gmail.com",
     'category': 'Accounting/Payment',
     'price': '255',
