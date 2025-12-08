@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<templates>
+<t t-name="mh_multi_currency_accounting_reports.currencyReportFiltersCustomizable"
+   t-inherit="account_reports.AgedPartnerBalanceFilters"
+   t-inherit-mode="extension">
+    <xpath expr="." position="inside">
+        <t t-if="'currencies' in controller.options">
+            <t t-if="controller.options.filter_multi_currencies">
+                <t t-call="mh_multi_currency_accounting_reports.AccountReportFiltercurrencies_data"/>
+            </t>
+        </t>
+    </xpath>
+</t>
+
+    <t t-name="mh_multi_currency_accounting_reports.currencyReportFiltersCustomizablePL"
+           t-inherit="account_reports.AccountReportFiltersCustomizable">
+
+    <xpath expr="//div[@id='filter_date']" position="after">
+        <t t-if="'currencies' in controller.options">
+            <t t-if="controller.options.filter_multi_currencies">
+                <t t-call="mh_multi_currency_accounting_reports.AccountReportFiltercurrencies_data"/>
+            </t>
+        </t>
+    </xpath>
+
+</t>
+
+</templates>

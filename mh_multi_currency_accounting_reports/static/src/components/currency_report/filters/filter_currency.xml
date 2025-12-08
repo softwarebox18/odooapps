@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<templates>
+    <!-- Multi-currency dropdown -->
+    <t t-name="mh_multi_currency_accounting_reports.AccountReportFiltercurrencies_data">
+        <Dropdown menuClass="'account_report_filter'">
+            <!-- Button as toggler -->
+            <button class="btn btn-secondary">
+                <i class="fa fa-money me-1"/>Currencies: <t t-esc="controller.options.currencies_selected_name or 'All'"/>
+            </button>
+
+            <!-- Dropdown items -->
+            <t t-set-slot="content">
+                <t t-foreach="controller.options.currencies" t-as="currency" t-key="currency_index">
+    <DropdownItem
+        class="{ 'selected': currency.selected }"
+        onSelected="() => this.filterCurrency(currency)"
+        closingMode="'none'"
+    >
+        <t t-esc="currency.name"/>
+    </DropdownItem>
+</t>
+
+            </t>
+        </Dropdown>
+    </t>
+
+    <!-- Rounding Unit dropdown -->
+    <t t-name="mh_multi_currency_accounting_reports.AccountReportFilterRoundingUnitextend">
+        <Dropdown menuClass="'account_report_filter'">
+            <!-- Button as toggler -->
+            <button class="btn btn-secondary">
+                <t t-out="roundingUnitName(controller.options['rounding_unit'])"/>
+            </button>
+
+            <!-- Dropdown items -->
+            <t t-set-slot="content">
+                <t t-foreach="controller.options.rounding_unit_names" t-as="roundingUnitValue" t-key="roundingUnitValue_index">
+                    <DropdownItem
+                        class="{ 'selected': (controller.options.rounding_unit == roundingUnitValue) }"
+                        onSelected="() => this.filterRoundingUnit(roundingUnitValue)"
+                        closingMode="'none'"
+                    >
+                        <t t-out="roundingUnitName(roundingUnitValue)"/>
+                    </DropdownItem>
+                </t>
+            </t>
+        </Dropdown>
+    </t>
+</templates>
+
+
+
