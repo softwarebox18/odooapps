@@ -11,7 +11,11 @@ class ResCompanyInh(models.Model):
         'company_id_partner',
         'field_id',
         string="Customer Display Fields",
-        domain=lambda self: self._get_partner_domain()
+        domain=[
+            ('model', '=', 'res.partner'),
+            ('ttype', 'in', ['char', 'text', 'integer', 'float', 'selection', 'many2one'])
+        ]
+        # domain=lambda self: self._get_partner_domain()
     )
 
     partner_search_fields = fields.Many2many(
@@ -20,7 +24,11 @@ class ResCompanyInh(models.Model):
         'company_id_partner',
         'field_id',
         string="Customer Search Fields",
-        domain=lambda self: self._get_partner_domain()
+        domain=[
+            ('model', '=', 'res.partner'),
+            ('ttype', 'in', ['char', 'text', 'integer', 'float', 'selection', 'many2one'])
+        ]
+        # domain=lambda self: self._get_partner_domain()
     )
 
     def _get_partner_domain(self):
